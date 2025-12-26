@@ -1,0 +1,434 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NASL Medical Center | Reproductive Health</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script>
+tailwind.config = {
+theme: {
+extend: {
+fontFamily: { sans: ['Poppins', 'sans-serif'] },
+colors: {
+medical: {
+50: '#F0F7FF',
+100: '#E0EFFF',
+500: '#3B82F6',
+600: '#2563EB',
+900: '#1E3A8A',
+}
+},
+borderRadius: {
+'3xl': '1.5rem',
+'4xl': '2rem',
+}
+}
+}
+}
+</script>
+</head>
+<body class="bg-slate-50 text-slate-700 antialiased">
+
+<div class="bg-medical-900 text-white py-2 text-xs">
+<div class="container mx-auto px-6 flex justify-between items-center">
+<div class="flex gap-4">
+<span class="flex items-center gap-2"><i data-lucide="map-pin" class="w-3 h-3"></i> N. Mahsum St. 95/4, Dushanbe</span>
+<span class="flex items-center gap-2"><i data-lucide="phone" class="w-3 h-3"></i> (+992) 93 500 65 71</span>
+</div>
+<div class="flex gap-3 font-semibold">
+<a href="#" class="opacity-70 hover:opacity-100">TJ</a>
+<a href="#" class="opacity-70 hover:opacity-100">RU</a>
+<a href="#" class="text-white">EN</a>
+</div>
+</div>
+</div>
+
+<nav class="bg-white py-4 sticky top-0 z-50 shadow-sm">
+<div class="container mx-auto px-6 flex justify-between items-center">
+<a href="#" class="flex items-center gap-3">
+<div class="w-10 h-10 bg-medical-600 rounded-xl flex items-center justify-center text-white font-bold text-xl">N</div>
+<div>
+<h1 class="text-xl font-bold text-slate-900 leading-none">NASL</h1>
+<p class="text-[10px] text-slate-500 font-bold tracking-widest uppercase">Medical Center</p>
+</div>
+</a>
+
+<div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-600">
+<a href="#about" class="hover:text-medical-600 transition">About</a>
+<a href="#services" class="hover:text-medical-600 transition">Areas of Care</a>
+<a href="#equipment" class="hover:text-medical-600 transition">Technology</a>
+<a href="#prices" class="hover:text-medical-600 transition">Pricing</a>
+<a href="#contact" class="bg-medical-600 text-white px-6 py-2.5 rounded-full hover:bg-medical-900 transition shadow-lg shadow-medical-600/20">
+Appointment
+</a>
+</div>
+
+<button class="lg:hidden" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+<i data-lucide="menu" class="w-6 h-6 text-slate-800"></i>
+</button>
+</div>
+</nav>
+
+<header class="relative bg-gradient-to-b from-medical-50 to-white pb-32 pt-16 overflow-hidden">
+<div class="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-50 -mr-20 -mt-20"></div>
+
+<div class="container mx-auto px-6 relative z-10">
+<div class="flex flex-col lg:flex-row items-center gap-12">
+<div class="lg:w-1/2 space-y-6">
+<div class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm text-xs font-bold text-medical-600 border border-blue-50">
+<span class="w-2 h-2 rounded-full bg-green-400"></span> Est. 2010
+</div>
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.2]">
+Transforming Lives, <br>
+<span class="text-medical-600">Restoring Families</span>
+</h1>
+<p class="text-slate-500 text-lg leading-relaxed max-w-lg">
+The first specialized medical center in Tajikistan providing advanced reproductive assistance, IVF, and hereditary disease diagnosis.
+</p>
+<div class="flex gap-4 pt-4">
+<a href="#services" class="bg-medical-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-medical-900 transition shadow-xl shadow-medical-600/20">
+Our Services
+</a>
+<a href="#contact" class="bg-white text-slate-700 px-8 py-4 rounded-full font-semibold hover:bg-slate-50 transition border border-slate-200 flex items-center gap-2">
+<i data-lucide="play-circle" class="w-5 h-5"></i> How we work
+</a>
+</div>
+</div>
+
+<div class="lg:w-1/2 relative">
+<div class="relative rounded-t-[10rem] rounded-b-[3rem] overflow-hidden border-4 border-white shadow-2xl bg-blue-100 h-[500px]">
+<div class="absolute inset-0 flex items-center justify-center text-medical-300">
+<i data-lucide="image" class="w-32 h-32 opacity-50"></i>
+</div>
+<img src="/api/placeholder/600/800" alt="NASL Doctor" class="object-cover w-full h-full mix-blend-overlay opacity-80" />
+
+<div class="absolute bottom-8 right-8 bg-white/90 backdrop-blur p-4 rounded-2xl shadow-lg max-w-xs">
+<div class="flex items-center gap-3">
+<div class="bg-green-100 p-2 rounded-full text-green-600"><i data-lucide="check-circle" class="w-6 h-6"></i></div>
+<div>
+<p class="text-xs text-slate-400 font-bold uppercase">Experience</p>
+<p class="font-bold text-slate-900">14+ Years of Success</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container mx-auto px-6 relative mt-16 lg:-mt-12 z-20">
+<div class="grid md:grid-cols-3 gap-6">
+<div class="bg-medical-600 text-white p-8 rounded-3xl shadow-xl hover:-translate-y-1 transition">
+<i data-lucide="calendar" class="w-10 h-10 mb-4 bg-white/20 p-2 rounded-xl"></i>
+<h3 class="text-xl font-bold mb-2">Book Appointment</h3>
+<p class="text-blue-100 text-sm mb-4">Schedule a consultation with our Reproductologists or Urologists.</p>
+<a href="#contact" class="text-sm font-bold flex items-center gap-2 hover:gap-4 transition-all">Book Now <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+</div>
+<div class="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-1 transition border border-slate-100">
+<i data-lucide="search" class="w-10 h-10 mb-4 bg-medical-50 text-medical-600 p-2 rounded-xl"></i>
+<h3 class="text-xl font-bold mb-2 text-slate-900">Find a Service</h3>
+<p class="text-slate-500 text-sm mb-4">Browse our comprehensive list of diagnostic and surgical services.</p>
+<a href="#services" class="text-sm font-bold text-medical-600 flex items-center gap-2 hover:gap-4 transition-all">View All <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+</div>
+<div class="bg-medical-50 p-8 rounded-3xl shadow-xl hover:-translate-y-1 transition border border-blue-100">
+<i data-lucide="phone-call" class="w-10 h-10 mb-4 bg-white text-medical-600 p-2 rounded-xl"></i>
+<h3 class="text-xl font-bold mb-2 text-slate-900">Emergency Contact</h3>
+<p class="text-slate-500 text-sm mb-4">Contact us directly for urgent reproductive health inquiries.</p>
+<a href="tel:+992935006571" class="text-sm font-bold text-medical-600 flex items-center gap-2 hover:gap-4 transition-all">(+992) 93 500 65 71</a>
+</div>
+</div>
+</div>
+</header>
+
+<section id="about" class="py-20 bg-white">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="md:w-1/2">
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-slate-100 rounded-3xl h-48 w-full flex items-center justify-center"><i data-lucide="activity" class="text-slate-300 w-12 h-12"></i></div>
+<div class="bg-medical-100 rounded-3xl h-48 w-full mt-8 flex items-center justify-center"><i data-lucide="heart" class="text-medical-300 w-12 h-12"></i></div>
+</div>
+</div>
+<div class="md:w-1/2">
+<span class="text-medical-600 font-bold uppercase tracking-wider text-sm">About Us</span>
+<h2 class="text-3xl font-bold text-slate-900 mt-2 mb-6">We Provide Finest Patient's Care & Amenities</h2>
+<p class="text-slate-500 leading-relaxed mb-6">
+The NASL Medical Center operates as a Limited Liability Company (LLC) established in accordance with the Civil Code of the Republic of Tajikistan. We use state-of-the-art methods for diagnosis and treatment of all types of infertility.
+</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-slate-700">
+<i data-lucide="check-circle" class="text-green-500 w-5 h-5"></i> Licensed Private Medical Activity
+</li>
+<li class="flex items-center gap-3 text-slate-700">
+<i data-lucide="check-circle" class="text-green-500 w-5 h-5"></i> Comprehensive Infertility Treatment
+</li>
+<li class="flex items-center gap-3 text-slate-700">
+<i data-lucide="check-circle" class="text-green-500 w-5 h-5"></i> Advanced Laser Technology
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section id="services" class="py-20 bg-slate-50">
+<div class="container mx-auto px-6">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<h2 class="text-3xl font-bold text-slate-900">We Serve In Different Areas For Our Patients</h2>
+<p class="text-slate-500 mt-4">Covering a comprehensive range of medical services organized into reproductive, diagnostic, and surgical categories.</p>
+</div>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition group">
+<div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+<i data-lucide="baby" class="w-6 h-6"></i>
+</div>
+<h3 class="font-bold text-lg text-slate-900 mb-2">IVF & ART</h3>
+<p class="text-sm text-slate-500">In-vitro fertilization, ICSI procedures, and assisted reproductive technologies.</p>
+</div>
+
+<div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition group">
+<div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-600 group-hover:text-white transition">
+<i data-lucide="dna" class="w-6 h-6"></i>
+</div>
+<h3 class="font-bold text-lg text-slate-900 mb-2">Genetics</h3>
+<p class="text-sm text-slate-500">Diagnosis of hereditary diseases and genetic testing for parentage.</p>
+</div>
+
+<div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition group">
+<div class="w-12 h-12 bg-teal-50 text-teal-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-teal-600 group-hover:text-white transition">
+<i data-lucide="microscope" class="w-6 h-6"></i>
+</div>
+<h3 class="font-bold text-lg text-slate-900 mb-2">Lab Diagnostics</h3>
+<p class="text-sm text-slate-500">PCR testing, hormone panels, and blood biochemical diagnostics.</p>
+</div>
+
+<div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition group">
+<div class="w-12 h-12 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-red-600 group-hover:text-white transition">
+<i data-lucide="scissors" class="w-6 h-6"></i>
+</div>
+<h3 class="font-bold text-lg text-slate-900 mb-2">Surgery</h3>
+<p class="text-sm text-slate-500">Laparoscopy, hysteroscopy, and laser operations (CO2).</p>
+</div>
+
+<div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition group">
+<div class="w-12 h-12 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-orange-600 group-hover:text-white transition">
+<i data-lucide="scan-line" class="w-6 h-6"></i>
+</div>
+<h3 class="font-bold text-lg text-slate-900 mb-2">Ultrasound</h3>
+<p class="text-sm text-slate-500">Fetal screening, uterus, kidneys, thyroid and doppler ultrasound.</p>
+</div>
+
+<div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition group">
+<div class="w-12 h-12 bg-pink-50 text-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-pink-600 group-hover:text-white transition">
+<i data-lucide="person-standing" class="w-6 h-6"></i>
+</div>
+<h3 class="font-bold text-lg text-slate-900 mb-2">Gynecology</h3>
+<p class="text-sm text-slate-500">Full range of gynecological surgeries and IUD insertion/removal.</p>
+</div>
+
+<div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition group">
+<div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:text-white transition">
+<i data-lucide="users" class="w-6 h-6"></i>
+</div>
+<h3 class="font-bold text-lg text-slate-900 mb-2">Andrology</h3>
+<p class="text-sm text-slate-500">Treatment of male infertility and sexually transmitted infections.</p>
+</div>
+
+<div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition group">
+<div class="w-12 h-12 bg-cyan-50 text-cyan-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-cyan-600 group-hover:text-white transition">
+<i data-lucide="snowflake" class="w-6 h-6"></i>
+</div>
+<h3 class="font-bold text-lg text-slate-900 mb-2">Cryopreservation</h3>
+<p class="text-sm text-slate-500">Storage of oocytes and embryos using Dewar Containers.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="equipment" class="py-20 bg-white">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">State-of-the-Art Technology</h2>
+
+<div class="grid md:grid-cols-4 gap-4 auto-rows-[200px]">
+<div class="md:col-span-2 md:row-span-2 bg-slate-100 rounded-3xl p-8 flex flex-col justify-end relative overflow-hidden group">
+<div class="absolute inset-0 bg-blue-100/50 group-hover:bg-blue-100/30 transition"></div>
+<img src="/api/placeholder/600/600" class="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-50" alt="Equipment">
+<div class="relative z-10">
+<h3 class="text-2xl font-bold text-slate-900">Mindray MR-96A</h3>
+<p class="text-slate-600">Immunoenzyme & PCR testing</p>
+</div>
+</div>
+
+<div class="bg-medical-50 rounded-3xl p-6 flex flex-col justify-center items-center text-center hover:bg-medical-100 transition border border-blue-100">
+<i data-lucide="zap" class="w-10 h-10 text-medical-600 mb-4"></i>
+<h4 class="font-bold text-slate-900">ERASER-CO2 Laser</h4>
+<p class="text-xs text-slate-500 mt-2">Surgical Procedures</p>
+</div>
+
+<div class="bg-white border-2 border-slate-100 rounded-3xl p-6 flex flex-col justify-center items-center text-center">
+<i data-lucide="monitor" class="w-10 h-10 text-purple-500 mb-4"></i>
+<h4 class="font-bold text-slate-900">SONOSCAPE SSI 6000</h4>
+<p class="text-xs text-slate-500 mt-2">Advanced Ultrasound</p>
+</div>
+
+<div class="md:col-span-2 bg-slate-900 text-white rounded-3xl p-8 flex items-center justify-between">
+<div>
+<h4 class="text-xl font-bold">PCR Laboratory</h4>
+<p class="text-slate-400 text-sm mt-2">Biobox & PCR Box equipped</p>
+</div>
+<i data-lucide="flask-conical" class="w-12 h-12 text-medical-400"></i>
+</div>
+</div>
+</div>
+</section>
+
+<section id="prices" class="py-20 bg-medical-50">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-10">
+<div>
+<h2 class="text-3xl font-bold text-slate-900">Transparent Pricing</h2>
+<p class="text-slate-500 mt-2">All prices in TJS (Somoni) including VAT.</p>
+</div>
+<a href="#" class="text-medical-600 font-bold flex items-center gap-2 hover:gap-3 transition-all">Download Full Price List <i data-lucide="download" class="w-4 h-4"></i></a>
+</div>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+<h3 class="text-lg font-bold text-slate-900 mb-4 border-b pb-2">Consultations</h3>
+<ul class="space-y-4 text-sm">
+<li class="flex justify-between items-center">
+<span class="text-slate-600">Initial (Reproductologist)</span>
+<span class="font-bold text-medical-700 bg-blue-50 px-2 py-1 rounded">42 TJS</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="text-slate-600">Initial (Urologist)</span>
+<span class="font-bold text-medical-700 bg-blue-50 px-2 py-1 rounded">42 TJS</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="text-slate-600">Professor / Highest Cat.</span>
+<span class="font-bold text-medical-700 bg-blue-50 px-2 py-1 rounded">142 TJS</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="text-slate-600">Joint (Husband & Wife)</span>
+<span class="font-bold text-medical-700 bg-blue-50 px-2 py-1 rounded">88 TJS</span>
+</li>
+</ul>
+</div>
+
+<div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+<h3 class="text-lg font-bold text-slate-900 mb-4 border-b pb-2">Diagnostic Procedures</h3>
+<ul class="space-y-4 text-sm">
+<li class="flex justify-between items-center">
+<span class="text-slate-600">Ultrasound (Uterus)</span>
+<span class="font-bold text-medical-700 bg-blue-50 px-2 py-1 rounded">55 TJS</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="text-slate-600">Pregnancy Screening</span>
+<span class="font-bold text-medical-700 bg-blue-50 px-2 py-1 rounded">60 TJS</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="text-slate-600">Spermogram</span>
+<span class="font-bold text-medical-700 bg-blue-50 px-2 py-1 rounded">100 TJS</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="text-slate-600">Colposcopy</span>
+<span class="font-bold text-medical-700 bg-blue-50 px-2 py-1 rounded">55 TJS</span>
+</li>
+</ul>
+</div>
+
+<div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+<h3 class="text-lg font-bold text-slate-900 mb-4 border-b pb-2">Laboratory & Hormones</h3>
+<ul class="space-y-4 text-sm">
+<li class="flex justify-between items-center">
+<span class="text-slate-600">Complete Blood Count</span>
+<span class="font-bold text-medical-700 bg-blue-50 px-2 py-1 rounded">32 TJS</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="text-slate-600">Blood Sugar</span>
+<span class="font-bold text-medical-700 bg-blue-50 px-2 py-1 rounded">25 TJS</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="text-slate-600">Hormones (FSH, LH, TSH)</span>
+<span class="font-bold text-medical-700 bg-blue-50 px-2 py-1 rounded">~73 TJS</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="text-slate-600">Estradiol</span>
+<span class="font-bold text-medical-700 bg-blue-50 px-2 py-1 rounded">100 TJS</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<footer id="contact" class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem]">
+<div class="container mx-auto px-6">
+<div class="grid md:grid-cols-3 gap-12 mb-16">
+<div class="space-y-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-medical-600 rounded-xl flex items-center justify-center font-bold text-white">N</div>
+<h2 class="text-2xl font-bold">NASL Center</h2>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed">
+Leading reproductive health care in Tajikistan since 2010.
+</p>
+</div>
+
+<div>
+<h4 class="font-bold text-lg mb-6">Contact Us</h4>
+<ul class="space-y-4 text-slate-400 text-sm">
+<li class="flex gap-3 items-start">
+<i data-lucide="map-pin" class="text-medical-500 w-5 h-5 mt-0.5"></i>
+<span>N. Mahsum Street 95/4, District 102,<br>Dushanbe, Tajikistan</span>
+</li>
+<li class="flex gap-3 items-center">
+<i data-lucide="mail" class="text-medical-500 w-5 h-5"></i>
+<a href="mailto:info@nasl.tj" class="hover:text-white transition">info@nasl.tj</a>
+</li>
+</ul>
+</div>
+
+<div>
+<h4 class="font-bold text-lg mb-6">Working Hours</h4>
+<ul class="space-y-3 text-slate-400 text-sm">
+<li class="flex justify-between">
+<span>Mon - Fri</span>
+<span class="text-white font-bold">08:00 - 17:00</span>
+</li>
+<li class="flex justify-between">
+<span>Saturday</span>
+<span class="text-white font-bold">08:00 - 14:00</span>
+</li>
+<li class="flex justify-between">
+<span>Sunday</span>
+<span class="text-medical-500 font-bold">Closed</span>
+</li>
+</ul>
+<div class="mt-6">
+<p class="text-xs text-slate-500 mb-1">Call Us:</p>
+<p class="text-2xl font-bold text-white">(+992) 93 500 65 71</p>
+</div>
+</div>
+</div>
+
+<div class="border-t border-slate-800 pt-8 text-center text-slate-500 text-xs">
+&copy; 2025 NASL Medical Center. All rights reserved.
+</div>
+</div>
+</footer>
+
+<script>
+lucide.createIcons();
+</script>
+</body>
+</html>

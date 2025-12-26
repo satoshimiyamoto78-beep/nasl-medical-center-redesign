@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASL Medical Center | Reproductive Health Experts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                        'slide-in-right': 'slideInRight 0.6s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        section { scroll-margin-top: 80px; }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #2563eb 0%, #0891b2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0fdfa 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .image-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        .image-shine::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
+        }
+        .image-shine:hover::after {
+            left: 100%;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2563eb;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        @keyframes blob {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(20px, -30px) scale(1.1); }
+            50% { transform: translate(-20px, 20px) scale(0.9); }
+            75% { transform: translate(30px, 10px) scale(1.05); }
+        }
+        .animate-blob {
+            animation: blob 8s infinite;
+        }
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden">
+
+    <!-- Top Bar -->
+    <div class="bg-slate-900 text-slate-300 text-xs py-2.5 hidden md:block">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex gap-8">
+                <span class="flex items-center gap-2 hover:text-white transition">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-primary-400"></i> 
+                    Dushanbe, N. Mahsum St. 95/4
+                </span>
+                <span class="flex items-center gap-2 hover:text-white transition">
+                    <i data-lucide="phone" class="w-3.5 h-3.5 text-primary-400"></i> 
+                    (+992) 93 500 65 71
+                </span>
+                <span class="flex items-center gap-2 hover:text-white transition">
+                    <i data-lucide="clock" class="w-3.5 h-3.5 text-primary-400"></i> 
+                    Mon-Fri: 08:00-17:00
+                </span>
+            </div>
+            <div class="flex gap-4 items-center">
+                <div class="flex gap-3 font-semibold">
+                    <a href="#" class="hover:text-primary-400 transition">TJ</a>
+                    <span class="text-slate-600">|</span>
+                    <a href="#" class="hover:text-primary-400 transition">RU</a>
+                    <span class="text-slate-600">|</span>
+                    <a href="#" class="text-primary-400">EN</a>
+                </div>
+                <div class="flex gap-3 ml-4 border-l border-slate-700 pl-4">
+                    <a href="#" class="hover:text-primary-400 transition"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-primary-400 transition"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-primary-400 transition"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-lg shadow-sm sticky top-0 z-50 border-b border-slate-100">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 bg-gradient-to-br from-primary-600 to-cyan-500 rounded-xl flex items-center justify-center text-white font-bold text-2xl shadow-lg shadow-primary-600/30 group-hover:shadow-primary-600/50 transition-all duration-300 group-hover:scale-105">
+                        N
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-extrabold text-slate-900 leading-none tracking-tight">NASL</h1>
+                        <p class="text-xs text-slate-500 uppercase tracking-widest font-medium">Medical Center</p>
+                    </div>
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                    <a href="#home" class="nav-link hover:text-primary-600 transition py-2">Home</a>
+                    <a href="#about" class="nav-link hover:text-primary-600 transition py-2">About Us</a>
+                    <a href="#services" class="nav-link hover:text-primary-600 transition py-2">Services</a>
+                    <a href="#team" class="nav-link hover:text-primary-600 transition py-2">Our Team</a>
+                    <a href="#equipment" class="nav-link hover:text-primary-600 transition py-2">Equipment</a>
+                    <a href="#pricing" class="nav-link hover:text-primary-600 transition py-2">Prices</a>
+                    <a href="#contact" class="nav-link hover:text-primary-600 transition py-2">Contact</a>
+                    
+                    <a href="#contact" class="ml-4 bg-gradient-to-r from-primary-600 to-cyan-500 text-white px-6 py-3 rounded-full hover:shadow-lg hover:shadow-primary-600/30 transition-all duration-300 flex items-center gap-2 font-bold hover:scale-105">
+                        <i data-lucide="calendar" class="w-4 h-4"></i> Book Now
+                    </a>
+                </div>
+
+                <button class="lg:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-lg transition" onclick="toggleMenu()">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t p-6 flex flex-col gap-4 shadow-2xl absolute w-full left-0 top-full">
+            <a href="#home" class="p-3 hover:bg-primary-50 rounded-xl text-slate-700 font-medium transition" onclick="toggleMenu()">Home</a>
+            <a href="#about" class="p-3 hover:bg-primary-50 rounded-xl text-slate-700 font-medium transition" onclick="toggleMenu()">About Us</a>
+            <a href="#services" class="p-3 hover:bg-primary-50 rounded-xl text-slate-700 font-medium transition" onclick="toggleMenu()">Services</a>
+            <a href="#team" class="p-3 hover:bg-primary-50 rounded-xl text-slate-700 font-medium transition" onclick="toggleMenu()">Our Team</a>
+            <a href="#equipment" class="p-3 hover:bg-primary-50 rounded-xl text-slate-700 font-medium transition" onclick="toggleMenu()">Equipment</a>
+            <a href="#pricing" class="p-3 hover:bg-primary-50 rounded-xl text-slate-700 font-medium transition" onclick="toggleMenu()">Prices</a>
+            <a href="#contact" class="p-3 hover:bg-primary-50 rounded-xl text-slate-700 font-medium transition" onclick="toggleMenu()">Contact</a>
+            <a href="#contact" class="mt-2 bg-gradient-to-r from-primary-600 to-cyan-500 text-white p-4 rounded-xl font-bold text-center" onclick="toggleMenu()">Book Appointment</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient relative pt-16 pb-24 overflow-hidden">
+        <!-- Animated Background Blobs -->
+        <div class="absolute top-20 left-10 w-72 h-72 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+        <div class="absolute top-40 right-10 w-72 h-72 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div class="absolute bottom-20 left-1/3 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 space-y-8">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur text-primary-700 text-sm font-bold border border-primary-100 shadow-sm animate-fade-in">
+                        <i data-lucide="award" class="w-4 h-4"></i> 
+                        First Specialized Center in Tajikistan
+                    </div>
+                    
+                    <h1 class="text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight animate-fade-in-up" style="animation-delay: 0.1s">
+                        Advanced <span class="gradient-text">Reproductive</span> Care & Diagnostics
+                    </h1>
+                    
+                    <p class="text-xl text-slate-600 leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s">
+                        We use cutting-edge technology for the diagnosis and treatment of infertility. Established in 2010, we are dedicated to helping families grow with compassion and expertise.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 pt-4 animate-fade-in-up" style="animation-delay: 0.3s">
+                        <a href="#pricing" class="bg-gradient-to-r from-primary-600 to-cyan-500 text-white px-8 py-4 rounded-full font-bold hover:shadow-xl hover:shadow-primary-600/30 transition-all duration-300 flex items-center gap-2 hover:scale-105">
+                            <i data-lucide="file-text" class="w-5 h-5"></i> View Prices
+                        </a>
+                        <a href="#services" class="bg-white text-slate-700 border-2 border-slate-200 px-8 py-4 rounded-full font-bold hover:border-primary-300 hover:bg-primary-50 transition-all duration-300 flex items-center gap-2">
+                            <i data-lucide="stethoscope" class="w-5 h-5"></i> Our Services
+                        </a>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="flex gap-8 pt-8 animate-fade-in-up" style="animation-delay: 0.4s">
+                        <div class="text-center">
+                            <div class="text-4xl font-extrabold gradient-text">15+</div>
+                            <div class="text-sm text-slate-500 font-medium">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-extrabold gradient-text">5000+</div>
+                            <div class="text-sm text-slate-500 font-medium">Happy Families</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-extrabold gradient-text">20+</div>
+                            <div class="text-sm text-slate-500 font-medium">Expert Doctors</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 relative animate-slide-in-right">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-primary-300 to-cyan-200 rounded-3xl blur-2xl opacity-40 animate-pulse-slow"></div>
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                        <img src="images/doctor1.jpg" alt="NASL Medical Center Doctor" class="w-full h-[500px] object-cover">
+                        
+                        <!-- Floating Card -->
+                        <div class="absolute bottom-6 left-6 glass-card p-4 rounded-2xl shadow-xl flex items-center gap-4 animate-float">
+                            <div class="bg-gradient-to-br from-green-400 to-emerald-500 p-3 rounded-xl text-white">
+                                <i data-lucide="heart-pulse" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs uppercase font-bold text-slate-400 tracking-wider">Established</p>
+                                <p class="text-2xl font-extrabold text-slate-900">2010</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Rating Card -->
+                        <div class="absolute top-6 right-6 glass-card p-4 rounded-2xl shadow-xl">
+                            <div class="flex items-center gap-2">
+                                <div class="flex text-yellow-400">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                </div>
+                                <span class="font-bold text-slate-900">4.9</span>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-1">Patient Rating</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="images/hospital.jpg" alt="Hospital Interior" class="rounded-2xl shadow-lg h-64 object-cover w-full">
+                        <img src="images/lab1.jpg" alt="Laboratory" class="rounded-2xl shadow-lg h-64 object-cover w-full mt-8">
+                        <img src="images/lab2.jpg" alt="Medical Research" class="rounded-2xl shadow-lg h-64 object-cover w-full -mt-8">
+                        <img src="images/lab4.jpg" alt="Petri Dish" class="rounded-2xl shadow-lg h-64 object-cover w-full">
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 space-y-6">
+                    <span class="text-primary-600 font-bold uppercase tracking-widest text-sm">About The Center</span>
+                    <h2 class="text-4xl font-extrabold text-slate-900 leading-tight">Leading Reproductive Medicine in Tajikistan</h2>
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        The NASL Medical Center is the first specialized institution providing reproductive assistance in the Republic of Tajikistan. We operate under strict legal compliance and utilize state-of-the-art methods to help families achieve their dreams.
+                    </p>
+                    
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-primary-100 text-primary-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="shield-check" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Licensed & Certified</h4>
+                                <p class="text-slate-600 text-sm">Established in accordance with the Law "On Private Medical Activities"</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-cyan-100 text-cyan-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="users" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Expert Medical Team</h4>
+                                <p class="text-slate-600 text-sm">Includes Professors, PhDs, and highest category reproductologists</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="microscope" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Advanced Technology</h4>
+                                <p class="text-slate-600 text-sm">Equipped with IVF, ICSI, and PCR technologies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-gradient-to-b from-slate-50 to-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-primary-600 font-bold uppercase tracking-widest text-sm">What We Offer</span>
+                <h2 class="text-4xl font-extrabold text-slate-900 mt-3">Medical Services</h2>
+                <p class="text-slate-600 mt-4 max-w-2xl mx-auto">Comprehensive care categorized by department, delivered with compassion and expertise</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-pink-500/30">
+                        <i data-lucide="baby" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-slate-900">Reproductive Health</h3>
+                    <ul class="text-slate-600 space-y-3 mb-6">
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            <span>IVF & ICSI Procedures</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            <span>Cryopreservation</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            <span>Infertility Treatment</span>
+                        </li>
+                    </ul>
+                    <a href="#pricing" class="text-primary-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-teal-500/30">
+                        <i data-lucide="test-tube-2" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-slate-900">Diagnostics</h3>
+                    <ul class="text-slate-600 space-y-3 mb-6">
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            <span>PCR Laboratory</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            <span>Hormone Diagnostics</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            <span>Blood Biochemistry</span>
+                        </li>
+                    </ul>
+                    <a href="#pricing" class="text-primary-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-indigo-500/30">
+                        <i data-lucide="activity" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-slate-900">Surgery</h3>
+                    <ul class="text-slate-600 space-y-3 mb-6">
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            <span>Laparoscopy</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            <span>Hysteroscopy</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            <span>Laser Surgery (CO2)</span>
+                        </li>
+                    </ul>
+                    <a href="#pricing" class="text-primary-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-amber-500/30">
+                        <i data-lucide="scan" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-slate-900">Ultrasound</h3>
+                    <ul class="text-slate-600 space-y-3 mb-6">
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            <span>Pregnancy Screening</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            <span>Folliculometry</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            <span>Doppler Ultrasound</span>
+                        </li>
+                    </ul>
+                    <a href="#pricing" class="text-primary-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-emerald-500/30">
+                        <i data-lucide="dna" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-slate-900">Genetic Testing</h3>
+                    <ul class="text-slate-600 space-y-3 mb-6">
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            <span>Parentage Testing</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            <span>Hereditary Diseases</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            <span>Genetic Consultation</span>
+                        </li>
+                    </ul>
+                    <a href="#pricing" class="text-primary-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-primary-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/30">
+                        <i data-lucide="heart" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-slate-900">Consultations</h3>
+                    <ul class="text-slate-600 space-y-3 mb-6">
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            <span>Reproductologist</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            <span>Andrologist</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            <span>Geneticist</span>
+                        </li>
+                    </ul>
+                    <a href="#pricing" class="text-primary-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="py-24 bg-slate-900 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary-600 to-cyan-600"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <span class="text-primary-400 font-bold uppercase tracking-widest text-sm">See Our Work</span>
+                    <h2 class="text-4xl font-extrabold text-white mt-3 mb-6">Advanced IVF Laboratory</h2>
+                    <p class="text-slate-300 text-lg leading-relaxed mb-8">
+                        Watch our embryologists perform cutting-edge IVF procedures in our state-of-the-art laboratory. Our team uses the latest technology to ensure the highest success rates for our patients.
+                    </p>
+                    <div class="flex gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-extrabold text-white">99.9%</div>
+                            <div class="text-sm text-slate-400">Accuracy Rate</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-extrabold text-white">ISO</div>
+                            <div class="text-sm text-slate-400">Certified Lab</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-extrabold text-white">24/7</div>
+                            <div class="text-sm text-slate-400">Monitoring</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <video controls class="w-full rounded-2xl" poster="images/lab3.jpg">
+                            <source src="videos/ivf-lab.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-primary-600 font-bold uppercase tracking-widest text-sm">Our Experts</span>
+                <h2 class="text-4xl font-extrabold text-slate-900 mt-3">Meet Our Team</h2>
+                <p class="text-slate-600 mt-4 max-w-2xl mx-auto">Our team of experienced professionals is dedicated to providing you with the best care</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl mb-4">
+                        <img src="images/doctor5.jpg" alt="Dr. Senior Specialist" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div class="flex gap-3">
+                                <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white hover:bg-primary-600 transition">
+                                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white hover:bg-primary-600 transition">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-lg text-slate-900">Dr. Akbar Rahimov</h4>
+                    <p class="text-primary-600 text-sm font-medium">Chief Reproductologist, Professor</p>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl mb-4">
+                        <img src="images/doctor4.jpg" alt="Dr. Female Specialist" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div class="flex gap-3">
+                                <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white hover:bg-primary-600 transition">
+                                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white hover:bg-primary-600 transition">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-lg text-slate-900">Dr. Malika Karimova</h4>
+                    <p class="text-primary-600 text-sm font-medium">Geneticist, PhD</p>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl mb-4">
+                        <img src="images/doctor2.jpg" alt="Dr. Male Specialist" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div class="flex gap-3">
+                                <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white hover:bg-primary-600 transition">
+                                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white hover:bg-primary-600 transition">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-lg text-slate-900">Dr. Farrukh Nazarov</h4>
+                    <p class="text-primary-600 text-sm font-medium">Andrologist, 1st Category</p>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl mb-4">
+                        <img src="images/doctor6.jpg" alt="Dr. Senior Doctor" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div class="flex gap-3">
+                                <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white hover:bg-primary-600 transition">
+                                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white hover:bg-primary-600 transition">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-lg text-slate-900">Dr. Rustam Saidov</h4>
+                    <p class="text-primary-600 text-sm font-medium">Embryologist, Highest Category</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipment Section -->
+    <section id="equipment" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-primary-600 font-bold uppercase tracking-widest text-sm">Our Technology</span>
+                <h2 class="text-4xl font-extrabold text-slate-900 mt-3">Modern Equipment</h2>
+                <p class="text-slate-600 mt-4 max-w-2xl mx-auto">We utilize state-of-the-art technology for precise results and optimal patient care</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center card-hover">
+                    <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="monitor" class="w-8 h-8 text-primary-600"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-800">Mindray MR-96A</h4>
+                    <p class="text-sm text-slate-500 mt-2">Immunoenzyme Tests</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center card-hover">
+                    <div class="w-16 h-16 bg-cyan-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="radio" class="w-8 h-8 text-cyan-600"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-800">SONOSCAPE SSI 6000</h4>
+                    <p class="text-sm text-slate-500 mt-2">Ultrasound Imaging</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center card-hover">
+                    <div class="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="zap" class="w-8 h-8 text-amber-600"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-800">ERASER-CO2 Laser</h4>
+                    <p class="text-sm text-slate-500 mt-2">Surgical Procedures</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center card-hover">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="snowflake" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-800">Dewar Containers</h4>
+                    <p class="text-sm text-slate-500 mt-2">Cryopreservation</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center card-hover">
+                    <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="microscope" class="w-8 h-8 text-purple-600"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-800">ICSI Microscope</h4>
+                    <p class="text-sm text-slate-500 mt-2">Microinjection System</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center card-hover">
+                    <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="box" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-800">Laminar Flow</h4>
+                    <p class="text-sm text-slate-500 mt-2">Sterile Environment</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center card-hover">
+                    <div class="w-16 h-16 bg-rose-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="eye" class="w-8 h-8 text-rose-600"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-800">SONY Colposcope</h4>
+                    <p class="text-sm text-slate-500 mt-2">Cervical Examination</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center card-hover">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="flask-conical" class="w-8 h-8 text-indigo-600"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-800">PCR Box</h4>
+                    <p class="text-sm text-slate-500 mt-2">Molecular Diagnostics</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <span class="text-primary-600 font-bold uppercase tracking-widest text-sm">Transparent Pricing</span>
+                    <h2 class="text-4xl font-extrabold text-slate-900 mt-3">Price List</h2>
+                    <p class="text-slate-600 mt-2">All prices in Tajik Somoni (TJS), including VAT</p>
+                </div>
+                <span class="bg-green-100 text-green-700 px-6 py-2 rounded-full text-sm font-bold mt-4 md:mt-0">
+                    <i data-lucide="badge-check" class="w-4 h-4 inline mr-1"></i> Updated 2025
+                </span>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Consultations -->
+                <div class="bg-gradient-to-br from-primary-50 to-cyan-50 p-8 rounded-3xl border border-primary-100">
+                    <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center">
+                            <i data-lucide="stethoscope" class="w-5 h-5 text-white"></i>
+                        </div>
+                        Consultations
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-center py-2 border-b border-primary-100">
+                            <span class="text-slate-700">Initial Reproductologist</span>
+                            <span class="font-bold text-slate-900">42 TJS</span>
+                        </li>
+                        <li class="flex justify-between items-center py-2 border-b border-primary-100">
+                            <span class="text-slate-700">Professor Consultation</span>
+                            <span class="font-bold text-slate-900">142 TJS</span>
+                        </li>
+                        <li class="flex justify-between items-center py-2 border-b border-primary-100">
+                            <span class="text-slate-700">Foreign Specialist</span>
+                            <span class="font-bold text-slate-900">213 TJS</span>
+                        </li>
+                        <li class="flex justify-between items-center py-2">
+                            <span class="text-slate-700">Couple Consultation</span>
+                            <span class="font-bold text-slate-900">88 TJS</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Diagnostics -->
+                <div class="bg-gradient-to-br from-teal-50 to-emerald-50 p-8 rounded-3xl border border-teal-100">
+                    <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-teal-600 rounded-xl flex items-center justify-center">
+                            <i data-lucide="scan" class="w-5 h-5 text-white"></i>
+                        </div>
+                        Ultrasound
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-center py-2 border-b border-teal-100">
+                            <span class="text-slate-700">Liver & Gallbladder</span>
+                            <span class="font-bold text-slate-900">52 TJS</span>
+                        </li>
+                        <li class="flex justify-between items-center py-2 border-b border-teal-100">
+                            <span class="text-slate-700">Uterus Ultrasound</span>
+                            <span class="font-bold text-slate-900">55 TJS</span>
+                        </li>
+                        <li class="flex justify-between items-center py-2 border-b border-teal-100">
+                            <span class="text-slate-700">Pregnancy Screening</span>
+                            <span class="font-bold text-slate-900">60 TJS</span>
+                        </li>
+                        <li class="flex justify-between items-center py-2">
+                            <span class="text-slate-700">Folliculometry</span>
+                            <span class="font-bold text-slate-900">35 TJS</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Lab Tests -->
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-3xl border border-purple-100">
+                    <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-purple-600 rounded-xl flex items-center justify-center">
+                            <i data-lucide="test-tube-2" class="w-5 h-5 text-white"></i>
+                        </div>
+                        Laboratory
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-center py-2 border-b border-purple-100">
+                            <span class="text-slate-700">Complete Blood Count</span>
+                            <span class="font-bold text-slate-900">32 TJS</span>
+                        </li>
+                        <li class="flex justify-between items-center py-2 border-b border-purple-100">
+                            <span class="text-slate-700">Hormone Panel (LH)</span>
+                            <span class="font-bold text-slate-900">73 TJS</span>
+                        </li>
+                        <li class="flex justify-between items-center py-2 border-b border-purple-100">
+                            <span class="text-slate-700">Spermogram Analysis</span>
+                            <span class="font-bold text-slate-900">100 TJS</span>
+                        </li>
+                        <li class="flex justify-between items-center py-2">
+                            <span class="text-slate-700">Genetic Parentage Test</span>
+                            <span class="font-bold text-slate-900">7400 TJS</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-flex items-center gap-2 bg-gradient-to-r from-primary-600 to-cyan-500 text-white px-8 py-4 rounded-full font-bold hover:shadow-xl hover:shadow-primary-600/30 transition-all duration-300 hover:scale-105">
+                    <i data-lucide="file-text" class="w-5 h-5"></i> Download Full Price List
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-primary-500 rounded-full filter blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500 rounded-full filter blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div>
+                    <span class="text-primary-400 font-bold uppercase tracking-widest text-sm">Get In Touch</span>
+                    <h2 class="text-4xl font-extrabold mt-3 mb-6">Contact Us</h2>
+                    <p class="text-slate-300 text-lg mb-8">
+                        Ready to start your journey? Contact us today to schedule a consultation with our expert team.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-14 h-14 bg-primary-600/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="map-pin" class="w-6 h-6 text-primary-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Address</h4>
+                                <p class="text-slate-400">N. Mahsum Street 95/4, Dushanbe<br>Republic of Tajikistan (District 102)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-14 h-14 bg-primary-600/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="phone" class="w-6 h-6 text-primary-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Phone</h4>
+                                <p class="text-slate-400">(+992) 93 500 65 71<br>(+992) 93 852 59 00<br>(+992) 903 06 75 75</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-14 h-14 bg-primary-600/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="clock" class="w-6 h-6 text-primary-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Working Hours</h4>
+                                <p class="text-slate-400">Monday - Friday: 08:00 - 17:00<br>Saturday: 08:00 - 14:00</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-14 h-14 bg-primary-600/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="mail" class="w-6 h-6 text-primary-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Email</h4>
+                                <p class="text-slate-400">info@nasl.tj<br>MCNASLShams@mail.ru</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/10">
+                    <h3 class="text-2xl font-bold mb-6">Book an Appointment</h3>
+                    <form class="space-y-5">
+                        <div class="grid md:grid-cols-2 gap-5">
+                            <input type="text" placeholder="Your Name" class="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-primary-400 transition">
+                            <input type="tel" placeholder="Phone Number" class="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-primary-400 transition">
+                        </div>
+                        <input type="email" placeholder="Email Address" class="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-primary-400 transition">
+                        <select class="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/20 text-slate-400 focus:outline-none focus:border-primary-400 transition">
+                            <option value="">Select Service</option>
+                            <option value="consultation">Consultation</option>
+                            <option value="ivf">IVF Treatment</option>
+                            <option value="diagnostics">Diagnostics</option>
+                            <option value="surgery">Surgery</option>
+                        </select>
+                        <textarea placeholder="Your Message" rows="4" class="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-primary-400 transition resize-none"></textarea>
+                        <button type="submit" class="w-full bg-gradient-to-r from-primary-600 to-cyan-500 text-white px-8 py-4 rounded-xl font-bold hover:shadow-xl hover:shadow-primary-600/30 transition-all duration-300 flex items-center justify-center gap-2">
+                            <i data-lucide="send" class="w-5 h-5"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-primary-600 to-cyan-500 rounded-xl flex items-center justify-center text-white font-bold text-xl">N</div>
+                    <div>
+                        <h4 class="text-white font-bold">NASL Medical Center</h4>
+                        <p class="text-xs">© 2010-2025 All Rights Reserved</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition">
+                        <i data-lucide="youtube" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

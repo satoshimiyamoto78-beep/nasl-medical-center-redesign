@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASL Medical Center - Website Redesign Concepts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-12px) scale(1.02);
+        }
+        .gradient-1 { background: linear-gradient(135deg, #2563eb 0%, #0891b2 100%); }
+        .gradient-2 { background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); }
+        .gradient-3 { background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%); }
+    </style>
+</head>
+<body class="bg-slate-100 min-h-screen">
+    <div class="container mx-auto px-6 py-16">
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center gap-3 mb-6">
+                <div class="w-16 h-16 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl flex items-center justify-center text-white font-bold text-3xl shadow-lg shadow-blue-600/30">
+                    N
+                </div>
+            </div>
+            <h1 class="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4">NASL Medical Center</h1>
+            <p class="text-xl text-slate-600 mb-2">Website Redesign Concepts</p>
+            <p class="text-slate-500">3 Different Design Approaches for the First Reproductive Health Center in Tajikistan</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- Design 1 -->
+            <a href="index1.html" class="card-hover bg-white rounded-3xl overflow-hidden shadow-lg group">
+                <div class="gradient-1 h-48 flex items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+                    <div class="text-white text-center relative z-10">
+                        <i data-lucide="layout-template" class="w-16 h-16 mx-auto mb-3 opacity-80"></i>
+                        <span class="text-sm font-bold uppercase tracking-wider opacity-80">Design 1</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Modern Professional</h3>
+                    <p class="text-slate-600 text-sm mb-4">Blue gradient theme with glass morphism effects, floating cards, and smooth animations. Professional medical aesthetic.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">Blue Theme</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-medium">Glass Effects</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-medium">Animations</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Design 2 -->
+            <a href="index2.html" class="card-hover bg-white rounded-3xl overflow-hidden shadow-lg group">
+                <div class="gradient-2 h-48 flex items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+                    <div class="text-white text-center relative z-10">
+                        <i data-lucide="leaf" class="w-16 h-16 mx-auto mb-3 opacity-80"></i>
+                        <span class="text-sm font-bold uppercase tracking-wider opacity-80">Design 2</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Fresh & Organic</h3>
+                    <p class="text-slate-600 text-sm mb-4">Green nature-inspired theme with clean layouts, service icons grid, and family-friendly feel. Warm and welcoming.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Green Theme</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-medium">Minimalist</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-medium">Family Focus</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Design 3 -->
+            <a href="index3.html" class="card-hover bg-white rounded-3xl overflow-hidden shadow-lg group">
+                <div class="gradient-3 h-48 flex items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+                    <div class="text-white text-center relative z-10">
+                        <i data-lucide="sparkles" class="w-16 h-16 mx-auto mb-3 opacity-80"></i>
+                        <span class="text-sm font-bold uppercase tracking-wider opacity-80">Design 3</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Soft & Elegant</h3>
+                    <p class="text-slate-600 text-sm mb-4">Teal/mint color scheme with soft shadows, rounded elements, and gentle animations. Premium clinic aesthetic.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-teal-100 text-teal-700 rounded-full text-xs font-medium">Teal Theme</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-medium">Soft Shadows</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-medium">Premium</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="text-center mt-16">
+            <p class="text-slate-500 text-sm">
+                Created for NASL Medical Center | Dushanbe, Tajikistan<br>
+                <span class="text-slate-400">All designs are responsive and mobile-friendly</span>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

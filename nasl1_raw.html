@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NASL Medical Center | Reproductive Health Experts</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+body { font-family: 'Inter', sans-serif; }
+/* Offset for fixed header when clicking links */
+section { scroll-margin-top: 100px; }
+</style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+<nav class="bg-white shadow-md sticky top-0 z-50">
+<div class="bg-slate-900 text-slate-300 text-xs py-2 hidden md:block">
+<div class="container mx-auto px-6 flex justify-between items-center">
+<div class="flex gap-6">
+<span class="flex items-center gap-2"><i data-lucide="map-pin" class="w-3 h-3"></i> Dushanbe, N. Mahsum St. 95/4</span>
+<span class="flex items-center gap-2"><i data-lucide="phone" class="w-3 h-3"></i> (+992) 93 500 65 71</span>
+</div>
+<div class="flex gap-3 font-semibold text-white">
+<a href="#" class="hover:text-blue-400">TJ</a>
+<span class="text-slate-600">|</span>
+<a href="#" class="hover:text-blue-400">RU</a>
+<span class="text-slate-600">|</span>
+<a href="#" class="text-blue-500">EN</a>
+</div>
+</div>
+</div>
+
+<div class="container mx-auto px-6 py-4">
+<div class="flex justify-between items-center">
+<a href="#home" class="flex items-center gap-2 group">
+<div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl group-hover:bg-blue-700 transition">N</div>
+<div>
+<h1 class="text-xl font-bold text-slate-900 leading-none">NASL</h1>
+<p class="text-xs text-slate-500 uppercase tracking-wider">Medical Center</p>
+</div>
+</a>
+
+<div class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-slate-600">
+<a href="#home" class="hover:text-blue-600 transition">Home</a>
+<a href="#about" class="hover:text-blue-600 transition">About Us</a>
+<a href="#services" class="hover:text-blue-600 transition">Services</a>
+<a href="#equipment" class="hover:text-blue-600 transition">Equipment</a>
+<a href="#pricing" class="hover:text-blue-600 transition">Price List</a>
+<a href="#contact" class="hover:text-blue-600 transition">Contacts</a>
+
+<a href="#contact" class="ml-4 bg-blue-600 text-white px-5 py-2.5 rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-600/20 flex items-center gap-2">
+<i data-lucide="calendar" class="w-4 h-4"></i> Appointment
+</a>
+</div>
+
+<button class="lg:hidden p-2 text-slate-600" onclick="toggleMenu()">
+<i data-lucide="menu" class="w-6 h-6"></i>
+</button>
+</div>
+</div>
+
+<div id="mobile-menu" class="hidden lg:hidden bg-white border-t p-4 flex flex-col gap-3 shadow-xl absolute w-full left-0 top-full">
+<a href="#home" class="p-2 hover:bg-slate-50 rounded-lg text-slate-700 font-medium" onclick="toggleMenu()">Home</a>
+<a href="#about" class="p-2 hover:bg-slate-50 rounded-lg text-slate-700 font-medium" onclick="toggleMenu()">About Us</a>
+<a href="#services" class="p-2 hover:bg-slate-50 rounded-lg text-slate-700 font-medium" onclick="toggleMenu()">Services</a>
+<a href="#equipment" class="p-2 hover:bg-slate-50 rounded-lg text-slate-700 font-medium" onclick="toggleMenu()">Equipment</a>
+<a href="#pricing" class="p-2 hover:bg-slate-50 rounded-lg text-slate-700 font-medium" onclick="toggleMenu()">Price List</a>
+<a href="#contact" class="p-2 hover:bg-slate-50 rounded-lg text-slate-700 font-medium" onclick="toggleMenu()">Contacts</a>
+<div class="border-t pt-3 flex gap-4 justify-center font-bold text-slate-500">
+<span>TJ</span> <span>RU</span> <span class="text-blue-600">EN</span>
+</div>
+</div>
+</nav>
+
+<section id="home" class="relative bg-white pt-10 pb-20 overflow-hidden">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row items-center gap-12">
+<div class="md:w-1/2 space-y-6 z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-sm font-bold border border-blue-100">
+<i data-lucide="check" class="w-4 h-4"></i> First Specialized Center in Tajikistan
+</div>
+<h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight">
+Advanced <span class="text-blue-600">Reproductive</span> Care & Diagnostics
+</h1>
+<p class="text-lg text-slate-600 leading-relaxed">
+We use advanced technology for the diagnosis and treatment of infertility. Established in 2010, we are dedicated to helping families grow.
+</p>
+<div class="flex gap-4 pt-4">
+<a href="#pricing" class="bg-blue-600 text-white px-8 py-4 rounded-full font-bold hover:bg-blue-700 transition shadow-xl shadow-blue-600/20">
+View Prices
+</a>
+<a href="#services" class="bg-white text-slate-700 border border-slate-200 px-8 py-4 rounded-full font-bold hover:bg-slate-50 transition">
+Our Services
+</a>
+</div>
+</div>
+
+<div class="md:w-1/2 relative">
+<div class="absolute -inset-4 bg-gradient-to-r from-blue-200 to-cyan-100 rounded-full blur-3xl opacity-40"></div>
+<div class="relative bg-slate-200 rounded-3xl h-[400px] w-full flex flex-col items-center justify-center border-4 border-white shadow-2xl overflow-hidden">
+<i data-lucide="image" class="w-16 h-16 text-slate-400 mb-2"></i>
+<span class="text-slate-500 font-medium">Insert Main Clinic Photo Here</span>
+
+<div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur p-4 rounded-xl shadow-lg flex items-center gap-3">
+<div class="bg-green-100 p-2 rounded text-green-600"><i data-lucide="history" class="w-5 h-5"></i></div>
+<div>
+<p class="text-xs uppercase font-bold text-slate-400">Established</p>
+<p class="font-bold text-slate-900">2010</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="about" class="py-20 bg-white border-t border-slate-100">
+<div class="container mx-auto px-6">
+<div class="max-w-3xl mx-auto text-center mb-12">
+<span class="text-blue-600 font-bold uppercase tracking-widest text-sm">About The Center</span>
+<h2 class="text-3xl font-bold mt-2 mb-4">Leading Reproductive Medicine</h2>
+<p class="text-slate-600">
+The NASL Medical Center is the first specialized institution providing reproductive assistance in the Republic of Tajikistan. We operate under strict legal compliance and utilize state-of-the-art methods.
+</p>
+</div>
+
+<div class="grid md:grid-cols-3 gap-8 text-center">
+<div class="p-6 bg-slate-50 rounded-xl">
+<div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="award" class="w-6 h-6"></i></div>
+<h3 class="font-bold text-lg mb-2">Licensed Care</h3>
+<p class="text-sm text-slate-500">Established in accordance with the Law "On Private Medical Activities".</p>
+</div>
+<div class="p-6 bg-slate-50 rounded-xl">
+<div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="users" class="w-6 h-6"></i></div>
+<h3 class="font-bold text-lg mb-2">Expert Team</h3>
+<p class="text-sm text-slate-500">Includes Professors, PhDs, and highest category reproductologists.</p>
+</div>
+<div class="p-6 bg-slate-50 rounded-xl">
+<div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="microscope" class="w-6 h-6"></i></div>
+<h3 class="font-bold text-lg mb-2">Modern Tech</h3>
+<p class="text-sm text-slate-500">Equipped with IVF, ICSI, and PCR technologies.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="services" class="py-20 bg-slate-50">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-slate-900">Medical Services</h2>
+<p class="text-slate-600 mt-2">Comprehensive care categorized by department</p>
+</div>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition">
+<div class="w-12 h-12 bg-pink-50 text-pink-600 rounded-lg flex items-center justify-center mb-6"><i data-lucide="baby" class="w-6 h-6"></i></div>
+<h3 class="text-xl font-bold mb-3">Reproductive Health</h3>
+<ul class="text-slate-600 text-sm space-y-2 mb-6">
+<li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> IVF & ICSI Procedures</li>
+<li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Cryopreservation</li>
+<li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Infertility Treatment</li>
+</ul>
+</div>
+
+<div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition">
+<div class="w-12 h-12 bg-teal-50 text-teal-600 rounded-lg flex items-center justify-center mb-6"><i data-lucide="test-tube" class="w-6 h-6"></i></div>
+<h3 class="text-xl font-bold mb-3">Diagnostics</h3>
+<ul class="text-slate-600 text-sm space-y-2 mb-6">
+<li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> PCR Laboratory</li>
+<li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Hormone Diagnostics</li>
+<li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Blood Biochemistry</li>
+</ul>
+</div>
+
+<div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition">
+<div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-lg flex items-center justify-center mb-6"><i data-lucide="activity" class="w-6 h-6"></i></div>
+<h3 class="text-xl font-bold mb-3">Surgery</h3>
+<ul class="text-slate-600 text-sm space-y-2 mb-6">
+<li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Laparoscopy</li>
+<li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Hysteroscopy</li>
+<li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Laser Surgery (CO2)</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section id="equipment" class="py-20 bg-white">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12">
+<div>
+<h2 class="text-3xl font-bold text-slate-900">Modern Equipment</h2>
+<p class="text-slate-600 mt-2">We utilize state-of-the-art technology for precise results.</p>
+</div>
+</div>
+
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="p-6 border border-slate-100 rounded-xl text-center hover:border-blue-200 transition">
+<i data-lucide="monitor" class="w-8 h-8 mx-auto text-blue-500 mb-3"></i>
+<h4 class="font-bold text-slate-800">Mindray MR-96A</h4>
+<p class="text-xs text-slate-500 mt-1">Immunoenzyme Tests</p>
+</div>
+<div class="p-6 border border-slate-100 rounded-xl text-center hover:border-blue-200 transition">
+<i data-lucide="wifi" class="w-8 h-8 mx-auto text-blue-500 mb-3"></i>
+<h4 class="font-bold text-slate-800">SONOSCAPE SSI 6000</h4>
+<p class="text-xs text-slate-500 mt-1">Ultrasound</p>
+</div>
+<div class="p-6 border border-slate-100 rounded-xl text-center hover:border-blue-200 transition">
+<i data-lucide="zap" class="w-8 h-8 mx-auto text-blue-500 mb-3"></i>
+<h4 class="font-bold text-slate-800">ERASER-CO2 Laser</h4>
+<p class="text-xs text-slate-500 mt-1">Surgical Procedures</p>
+</div>
+<div class="p-6 border border-slate-100 rounded-xl text-center hover:border-blue-200 transition">
+<i data-lucide="snowflake" class="w-8 h-8 mx-auto text-blue-500 mb-3"></i>
+<h4 class="font-bold text-slate-800">Dewar Containers</h4>
+<p class="text-xs text-slate-500 mt-1">Cryopreservation</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="pricing" class="py-20 bg-slate-50">
+<div class="container mx-auto px-6">
+<div class="flex items-center justify-between mb-10">
+<h2 class="text-3xl font-bold text-slate-900">Price List</h2>
+<span class="bg-green-100 text-green-700 px-4 py-1 rounded-full text-sm font-bold">TJS (Somoni)</span>
+</div>
+
+<div class="bg-white rounded-2xl shadow-sm overflow-hidden border border-slate-200">
+<table class="w-full text-left border-collapse">
+<thead class="bg-slate-100 text-slate-600 text-xs uppercase tracking-wider">
+<tr>
+<th class="p-4 font-bold border-b">Service Name</th>
+<th class="p-4 font-bold border-b text-right">Price (TJS)</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 text-sm">
+<tr class="bg-slate-50/50"><td colspan="2" class="p-3 font-bold text-blue-600">Consultations</td></tr>
+<tr class="hover:bg-blue-50">
+<td class="p-4 text-slate-700">Initial consultation (Reproductologist / Urologist)</td>
+<td class="p-4 font-bold text-slate-900 text-right">42</td>
+</tr>
+<tr class="hover:bg-blue-50">
+<td class="p-4 text-slate-700">Consultation with Professor</td>
+<td class="p-4 font-bold text-slate-900 text-right">142</td>
+</tr>
+
+<tr class="bg-slate-50/50"><td colspan="2" class="p-3 font-bold text-blue-600">Ultrasound & Procedures</td></tr>
+<tr class="hover:bg-blue-50">
+<td class="p-4 text-slate-700">Ultrasound (Uterus / Fetal)</td>
+<td class="p-4 font-bold text-slate-900 text-right">55</td>
+</tr>
+<tr class="hover:bg-blue-50">
+<td class="p-4 text-slate-700">Spermogram Analysis</td>
+<td class="p-4 font-bold text-slate-900 text-right">100</td>
+</tr>
+<tr class="hover:bg-blue-50">
+<td class="p-4 text-slate-700">Pregnancy Screening</td>
+<td class="p-4 font-bold text-slate-900 text-right">60</td>
+</tr>
+
+<tr class="bg-slate-50/50"><td colspan="2" class="p-3 font-bold text-blue-600">Laboratory</td></tr>
+<tr class="hover:bg-blue-50">
+<td class="p-4 text-slate-700">Complete Blood Count</td>
+<td class="p-4 font-bold text-slate-900 text-right">32</td>
+</tr>
+<tr class="hover:bg-blue-50">
+<td class="p-4 text-slate-700">Hormone Tests (FSH, LH, etc)</td>
+<td class="p-4 font-bold text-slate-900 text-right">72 - 78</td>
+</tr>
+</tbody>
+</table>
+<div class="p-4 text-center border-t">
+<p class="text-xs text-slate-400">Prices include VAT. Prices subject to change.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contact" class="bg-slate-900 text-white py-20">
+<div class="container mx-auto px-6">
+<div class="grid md:grid-cols-2 gap-12">
+<div>
+<h2 class="text-3xl font-bold mb-6">Contact Information</h2>
+<p class="text-slate-400 mb-8">Feel free to reach out to us for appointments or inquiries.</p>
+
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-blue-400"><i data-lucide="map-pin"></i></div>
+<div>
+<p class="font-bold">Address</p>
+<p class="text-slate-400 text-sm">N. Mahsum Street 95/4, Dushanbe (District 102)</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-blue-400"><i data-lucide="clock"></i></div>
+<div>
+<p class="font-bold">Working Hours</p>
+<p class="text-slate-400 text-sm">Mon-Fri: 08:00-17:00 | Sat: 08:00-14:00</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-blue-400"><i data-lucide="phone"></i></div>
+<div>
+<p class="font-bold">Phone</p>
+<p class="text-slate-400 text-sm">(+992) 93 500 65 71, (+992) 93 852 59 00</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-blue-400"><i data-lucide="mail"></i></div>
+<div>
+<p class="font-bold">Email</p>
+<p class="text-slate-400 text-sm">info@nasl.tj</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="bg-slate-800 rounded-2xl h-80 flex items-center justify-center border-2 border-slate-700">
+<div class="text-center">
+<i data-lucide="map" class="w-12 h-12 text-slate-600 mx-auto mb-2"></i>
+<p class="text-slate-500">Google Map Integration</p>
+<p class="text-xs text-slate-600">Embed your Google Map iframe here</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="bg-slate-950 text-slate-500 py-8 text-center text-sm border-t border-slate-900">
+<div class="container mx-auto">
+<p>&copy; 2025 NASL Medical Center. All rights reserved.</p>
+</div>
+</footer>
+
+<script>
+// Initialize Icons
+lucide.createIcons();
+
+// Mobile Menu Toggle
+function toggleMenu() {
+const menu = document.getElementById('mobile-menu');
+menu.classList.toggle('hidden');
+}
+</script>
+</body>
+</html>
