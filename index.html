@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NASL Medical Center - Website Redesign Concepts</title>
+    <title>NASL Медицинский Центр - Концепции Редизайна Сайта</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,38 +18,63 @@
         .gradient-1 { background: linear-gradient(135deg, #2563eb 0%, #0891b2 100%); }
         .gradient-2 { background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); }
         .gradient-3 { background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%); }
+        .team-card {
+            transition: all 0.3s ease;
+        }
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.15);
+        }
     </style>
 </head>
 <body class="bg-slate-100 min-h-screen">
+    <!-- Header with zerotwelve branding -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="images/zerotwelve.png" alt="zerotwelve" class="h-10">
+            </div>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="#designs" class="hover:text-blue-600 transition">Дизайны</a>
+                <a href="#team" class="hover:text-blue-600 transition">Наша Команда</a>
+                <a href="#contact" class="hover:text-blue-600 transition">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
     <div class="container mx-auto px-6 py-16">
+        <!-- Hero Section -->
         <div class="text-center mb-16">
             <div class="inline-flex items-center gap-3 mb-6">
-                <div class="w-16 h-16 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl flex items-center justify-center text-white font-bold text-3xl shadow-lg shadow-blue-600/30">
-                    N
-                </div>
+                <img src="images/nasl-logo.png" alt="NASL" class="w-20 h-20 object-contain" style="filter: invert(40%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(60%) contrast(90%);">
             </div>
-            <h1 class="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4">NASL Medical Center</h1>
-            <p class="text-xl text-slate-600 mb-2">Website Redesign Concepts</p>
-            <p class="text-slate-500">3 Different Design Approaches for the First Reproductive Health Center in Tajikistan</p>
+            <h1 class="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4">NASL Медицинский Центр</h1>
+            <p class="text-xl text-slate-600 mb-2">Концепции Редизайна Сайта</p>
+            <p class="text-slate-500">3 различных дизайн-подхода для первого центра репродуктивного здоровья в Таджикистане</p>
+            <div class="mt-4 inline-flex items-center gap-2 text-sm text-slate-400">
+                <span>Разработано</span>
+                <img src="images/zerotwelve.png" alt="zerotwelve" class="h-5">
+            </div>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Design Cards -->
+        <div id="designs" class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
             <!-- Design 1 -->
             <a href="index1.html" class="card-hover bg-white rounded-3xl overflow-hidden shadow-lg group">
                 <div class="gradient-1 h-48 flex items-center justify-center relative overflow-hidden">
                     <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
                     <div class="text-white text-center relative z-10">
                         <i data-lucide="layout-template" class="w-16 h-16 mx-auto mb-3 opacity-80"></i>
-                        <span class="text-sm font-bold uppercase tracking-wider opacity-80">Design 1</span>
+                        <span class="text-sm font-bold uppercase tracking-wider opacity-80">Дизайн 1</span>
                     </div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Modern Professional</h3>
-                    <p class="text-slate-600 text-sm mb-4">Blue gradient theme with glass morphism effects, floating cards, and smooth animations. Professional medical aesthetic.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Современный Профессиональный</h3>
+                    <p class="text-slate-600 text-sm mb-4">Синяя градиентная тема с эффектами стекла, плавающими карточками и плавными анимациями. Профессиональная медицинская эстетика.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">Blue Theme</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-medium">Glass Effects</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-medium">Animations</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">Синяя Тема</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-medium">Эффекты Стекла</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-medium">Анимации</span>
                     </div>
                 </div>
             </a>
@@ -60,16 +85,16 @@
                     <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
                     <div class="text-white text-center relative z-10">
                         <i data-lucide="leaf" class="w-16 h-16 mx-auto mb-3 opacity-80"></i>
-                        <span class="text-sm font-bold uppercase tracking-wider opacity-80">Design 2</span>
+                        <span class="text-sm font-bold uppercase tracking-wider opacity-80">Дизайн 2</span>
                     </div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Fresh & Organic</h3>
-                    <p class="text-slate-600 text-sm mb-4">Green nature-inspired theme with clean layouts, service icons grid, and family-friendly feel. Warm and welcoming.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Свежий и Органичный</h3>
+                    <p class="text-slate-600 text-sm mb-4">Зелёная природная тема с чистыми макетами, сеткой иконок услуг и семейной атмосферой. Тёплый и гостеприимный.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Green Theme</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-medium">Minimalist</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-medium">Family Focus</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Зелёная Тема</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-medium">Минимализм</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-medium">Семейный Фокус</span>
                     </div>
                 </div>
             </a>
@@ -80,26 +105,98 @@
                     <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
                     <div class="text-white text-center relative z-10">
                         <i data-lucide="sparkles" class="w-16 h-16 mx-auto mb-3 opacity-80"></i>
-                        <span class="text-sm font-bold uppercase tracking-wider opacity-80">Design 3</span>
+                        <span class="text-sm font-bold uppercase tracking-wider opacity-80">Дизайн 3</span>
                     </div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Soft & Elegant</h3>
-                    <p class="text-slate-600 text-sm mb-4">Teal/mint color scheme with soft shadows, rounded elements, and gentle animations. Premium clinic aesthetic.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Мягкий и Элегантный</h3>
+                    <p class="text-slate-600 text-sm mb-4">Бирюзово-мятная цветовая схема с мягкими тенями, закруглёнными элементами и нежными анимациями. Премиум эстетика клиники.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-teal-100 text-teal-700 rounded-full text-xs font-medium">Teal Theme</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-medium">Soft Shadows</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-medium">Premium</span>
+                        <span class="px-3 py-1 bg-teal-100 text-teal-700 rounded-full text-xs font-medium">Бирюзовая Тема</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-medium">Мягкие Тени</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-medium">Премиум</span>
                     </div>
                 </div>
             </a>
         </div>
 
-        <div class="text-center mt-16">
+        <!-- Team Section -->
+        <div id="team" class="max-w-6xl mx-auto mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-3">Наша Команда</h2>
+                <p class="text-slate-600">Специалисты, работающие над этим проектом</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Daria Luchnikova -->
+                <a href="https://www.behance.net/darialuchnikova" target="_blank" class="team-card bg-white rounded-2xl p-6 shadow-lg text-center">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center text-white text-3xl font-bold">
+                        DL
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Дарья Лучникова</h3>
+                    <p class="text-sm text-slate-500 mb-3">Графический Дизайнер | UX/UI | Веб-дизайнер</p>
+                    <p class="text-xs text-slate-400 mb-4">6+ лет опыта в графическом дизайне, UX/UI, веб-разработке, анимации и иллюстрации</p>
+                    <div class="flex justify-center gap-2">
+                        <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded text-xs">Photoshop</span>
+                        <span class="px-2 py-1 bg-orange-50 text-orange-600 rounded text-xs">Illustrator</span>
+                        <span class="px-2 py-1 bg-purple-50 text-purple-600 rounded text-xs">After Effects</span>
+                    </div>
+                    <div class="mt-4 flex items-center justify-center gap-2 text-blue-600 text-sm font-medium">
+                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                        Behance
+                    </div>
+                </a>
+
+                <!-- Saeta K -->
+                <a href="https://www.behance.net/saetakir" target="_blank" class="team-card bg-white rounded-2xl p-6 shadow-lg text-center">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-teal-400 to-cyan-500 flex items-center justify-center text-white text-3xl font-bold">
+                        SK
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Саета К</h3>
+                    <p class="text-sm text-slate-500 mb-3">UX/UI Дизайнер</p>
+                    <p class="text-xs text-slate-400 mb-4">Специализация на iGaming, SaaS и веб-платформах. Создание масштабируемых дизайн-систем и плавных пользовательских потоков</p>
+                    <div class="flex justify-center gap-2">
+                        <span class="px-2 py-1 bg-purple-50 text-purple-600 rounded text-xs">Figma</span>
+                        <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded text-xs">UX Research</span>
+                        <span class="px-2 py-1 bg-green-50 text-green-600 rounded text-xs">Design Systems</span>
+                    </div>
+                    <div class="mt-4 flex items-center justify-center gap-2 text-blue-600 text-sm font-medium">
+                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                        Behance
+                    </div>
+                </a>
+
+                <!-- Umed Shermuhammadiyon -->
+                <a href="https://www.behance.net/SherumDesign" target="_blank" class="team-card bg-white rounded-2xl p-6 shadow-lg text-center">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-white text-3xl font-bold">
+                        US
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Умед Шермухаммадиён</h3>
+                    <p class="text-sm text-slate-500 mb-3">Графический Дизайнер</p>
+                    <p class="text-xs text-slate-400 mb-4">Опыт в брендинге и создании цифрового контента. Создание визуально впечатляющих и эффективных дизайнов</p>
+                    <div class="flex justify-center gap-2">
+                        <span class="px-2 py-1 bg-blue-50 text-blue-600 rounded text-xs">Branding</span>
+                        <span class="px-2 py-1 bg-pink-50 text-pink-600 rounded text-xs">Identity</span>
+                        <span class="px-2 py-1 bg-amber-50 text-amber-600 rounded text-xs">Print</span>
+                    </div>
+                    <div class="mt-4 flex items-center justify-center gap-2 text-blue-600 text-sm font-medium">
+                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                        Behance
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div id="contact" class="text-center">
             <p class="text-slate-500 text-sm">
-                Created for NASL Medical Center | Dushanbe, Tajikistan<br>
-                <span class="text-slate-400">All designs are responsive and mobile-friendly</span>
+                Создано для NASL Медицинский Центр | Душанбе, Таджикистан<br>
+                <span class="text-slate-400">Все дизайны адаптивны и оптимизированы для мобильных устройств</span>
             </p>
+            <div class="mt-6 flex justify-center items-center gap-2">
+                <span class="text-slate-400 text-sm">Разработано</span>
+                <img src="images/zerotwelve.png" alt="zerotwelve" class="h-6">
+            </div>
         </div>
     </div>
 

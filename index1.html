@@ -136,34 +136,448 @@
         .animation-delay-4000 {
             animation-delay: 4s;
         }
+        
+        .lang-btn { transition: all 0.2s; }
+        .lang-btn.active { color: #60a5fa; font-weight: 700; }
+        .lang-btn:hover { color: #60a5fa; }
+        
+        .logo-grey { filter: invert(40%) sepia(0%) saturate(0%) brightness(60%) contrast(90%); }
+        .logo-white { filter: brightness(0) invert(1); }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden">
 
-    <!-- Top Bar -->
+    <!-- Translations Object -->
+    <script>
+        const translations = {
+            en: {
+                address: "Dushanbe, N. Mahsum St. 95/4",
+                phone: "(+992) 93 500 65 71",
+                hours: "Mon-Fri: 08:00-17:00",
+                medicalCenter: "Medical Center",
+                home: "Home",
+                aboutUs: "About Us",
+                services: "Services",
+                ourTeam: "Our Team",
+                equipment: "Equipment",
+                prices: "Prices",
+                contact: "Contact",
+                bookNow: "Book Now",
+                firstCenter: "First Specialized Center in Tajikistan",
+                heroTitle1: "Advanced",
+                heroTitle2: "Reproductive",
+                heroTitle3: "Care & Diagnostics",
+                heroDesc: "We use cutting-edge technology for the diagnosis and treatment of infertility. Established in 2010, we are dedicated to helping families grow with compassion and expertise.",
+                viewPrices: "View Prices",
+                ourServices: "Our Services",
+                yearsExp: "Years Experience",
+                happyFamilies: "Happy Families",
+                expertDoctors: "Expert Doctors",
+                established: "Established",
+                patientRating: "Patient Rating",
+                aboutTitle: "Leading Reproductive Medicine in Tajikistan",
+                aboutDesc: "The NASL Medical Center is the first specialized institution providing reproductive assistance in the Republic of Tajikistan. We operate under strict legal compliance and utilize state-of-the-art methods to help families achieve their dreams.",
+                licensed: "Licensed & Certified",
+                licensedDesc: "Established in accordance with the Law \"On Private Medical Activities\"",
+                expertTeam: "Expert Medical Team",
+                expertTeamDesc: "Includes Professors, PhDs, and highest category reproductologists",
+                advancedTech: "Advanced Technology",
+                advancedTechDesc: "Equipped with IVF, ICSI, and PCR technologies",
+                whatWeOffer: "What We Offer",
+                medicalServices: "Medical Services",
+                servicesDesc: "Comprehensive care categorized by department, delivered with compassion and expertise",
+                reproHealth: "Reproductive Health",
+                ivfProcedures: "IVF & ICSI Procedures",
+                cryopreservation: "Cryopreservation",
+                infertilityTreatment: "Infertility Treatment",
+                learnMore: "Learn More",
+                diagnostics: "Diagnostics",
+                pcrLab: "PCR Laboratory",
+                hormoneDiag: "Hormone Diagnostics",
+                bloodBiochem: "Blood Biochemistry",
+                surgery: "Surgery",
+                laparoscopy: "Laparoscopy",
+                hysteroscopy: "Hysteroscopy",
+                laserSurgery: "Laser Surgery (CO2)",
+                ultrasound: "Ultrasound",
+                pregnancyScreen: "Pregnancy Screening",
+                folliculometry: "Folliculometry",
+                dopplerUltrasound: "Doppler Ultrasound",
+                geneticTesting: "Genetic Testing",
+                parentageTesting: "Parentage Testing",
+                hereditaryDiseases: "Hereditary Diseases",
+                geneticConsult: "Genetic Consultation",
+                consultations: "Consultations",
+                reproductologist: "Reproductologist",
+                andrologist: "Andrologist",
+                geneticist: "Geneticist",
+                seeOurWork: "See Our Work",
+                advancedIVF: "Advanced IVF Laboratory",
+                labDesc: "Watch our embryologists perform cutting-edge IVF procedures in our state-of-the-art laboratory. Our team uses the latest technology to ensure the highest success rates for our patients.",
+                accuracyRate: "Accuracy Rate",
+                certifiedLab: "Certified Lab",
+                monitoring: "Monitoring",
+                ourExperts: "Our Experts",
+                meetTeam: "Meet Our Team",
+                teamDesc: "Our team of experienced professionals is dedicated to providing you with the best care",
+                chiefRepro: "Chief Reproductologist, Professor",
+                geneticistPhD: "Geneticist, PhD",
+                andrologist1st: "Andrologist, 1st Category",
+                embryologist: "Embryologist, Highest Category",
+                ourTechnology: "Our Technology",
+                modernEquip: "Modern Equipment",
+                equipDesc: "We utilize state-of-the-art technology for precise results and optimal patient care",
+                immunoTests: "Immunoenzyme Tests",
+                ultrasoundImaging: "Ultrasound Imaging",
+                surgicalProc: "Surgical Procedures",
+                cryoStorage: "Cryopreservation",
+                microinjection: "Microinjection System",
+                sterileEnv: "Sterile Environment",
+                cervicalExam: "Cervical Examination",
+                molecularDiag: "Molecular Diagnostics",
+                transparentPricing: "Transparent Pricing",
+                priceList: "Price List",
+                priceDesc: "All prices in Tajik Somoni (TJS), including VAT",
+                updated: "Updated 2025",
+                consultationsTab: "Consultations",
+                initialRepro: "Initial Reproductologist",
+                professorConsult: "Professor Consultation",
+                foreignSpecialist: "Foreign Specialist",
+                coupleConsult: "Couple Consultation",
+                ultrasoundTab: "Ultrasound",
+                liverGallbladder: "Liver & Gallbladder",
+                uterusUltrasound: "Uterus Ultrasound",
+                laboratory: "Laboratory",
+                completeBlood: "Complete Blood Count",
+                hormonePanel: "Hormone Panel (LH)",
+                spermogram: "Spermogram Analysis",
+                geneticParentage: "Genetic Parentage Test",
+                downloadPrice: "Download Full Price List",
+                getInTouch: "Get In Touch",
+                contactUs: "Contact Us",
+                contactDesc: "Ready to start your journey? Contact us today to schedule a consultation with our expert team.",
+                addressLabel: "Address",
+                addressFull: "N. Mahsum Street 95/4, Dushanbe\nRepublic of Tajikistan (District 102)",
+                phoneLabel: "Phone",
+                workingHours: "Working Hours",
+                weekdays: "Monday - Friday: 08:00 - 17:00",
+                saturday: "Saturday: 08:00 - 14:00",
+                emailLabel: "Email",
+                bookAppointment: "Book an Appointment",
+                selectService: "Select Service",
+                consultation: "Consultation",
+                ivfTreatment: "IVF Treatment",
+                diagnosticsOpt: "Diagnostics",
+                surgeryOpt: "Surgery",
+                sendMessage: "Send Message",
+                allRights: "All Rights Reserved",
+                aboutCenter: "About the Center"
+            },
+            ru: {
+                address: "Душанбе, ул. Н. Махсум 95/4",
+                phone: "(+992) 93 500 65 71",
+                hours: "Пн-Пт: 08:00-17:00",
+                medicalCenter: "Медицинский Центр",
+                home: "Главная",
+                aboutUs: "О нас",
+                services: "Услуги",
+                ourTeam: "Наша команда",
+                equipment: "Оборудование",
+                prices: "Цены",
+                contact: "Контакты",
+                bookNow: "Записаться",
+                firstCenter: "Первый специализированный центр в Таджикистане",
+                heroTitle1: "Передовая",
+                heroTitle2: "Репродуктивная",
+                heroTitle3: "Помощь и Диагностика",
+                heroDesc: "Мы используем передовые технологии для диагностики и лечения бесплодия. Основанный в 2010 году, наш центр помогает семьям расти с заботой и профессионализмом.",
+                viewPrices: "Смотреть цены",
+                ourServices: "Наши услуги",
+                yearsExp: "Лет опыта",
+                happyFamilies: "Счастливых семей",
+                expertDoctors: "Врачей-экспертов",
+                established: "Основан",
+                patientRating: "Рейтинг пациентов",
+                aboutTitle: "Ведущая репродуктивная медицина в Таджикистане",
+                aboutDesc: "Медицинский центр NASL — первое специализированное учреждение, оказывающее репродуктивную помощь в Республике Таджикистан. Мы работаем в строгом соответствии с законодательством и используем современные методы.",
+                licensed: "Лицензировано и сертифицировано",
+                licensedDesc: "Создано в соответствии с Законом «О частной медицинской деятельности»",
+                expertTeam: "Экспертная медицинская команда",
+                expertTeamDesc: "Включает профессоров, кандидатов наук и репродуктологов высшей категории",
+                advancedTech: "Передовые технологии",
+                advancedTechDesc: "Оснащены технологиями ЭКО, ИКСИ и ПЦР",
+                whatWeOffer: "Что мы предлагаем",
+                medicalServices: "Медицинские услуги",
+                servicesDesc: "Комплексная помощь по отделениям, оказываемая с заботой и профессионализмом",
+                reproHealth: "Репродуктивное здоровье",
+                ivfProcedures: "Процедуры ЭКО и ИКСИ",
+                cryopreservation: "Криоконсервация",
+                infertilityTreatment: "Лечение бесплодия",
+                learnMore: "Подробнее",
+                diagnostics: "Диагностика",
+                pcrLab: "ПЦР лаборатория",
+                hormoneDiag: "Гормональная диагностика",
+                bloodBiochem: "Биохимия крови",
+                surgery: "Хирургия",
+                laparoscopy: "Лапароскопия",
+                hysteroscopy: "Гистероскопия",
+                laserSurgery: "Лазерная хирургия (CO2)",
+                ultrasound: "УЗИ",
+                pregnancyScreen: "Скрининг беременности",
+                folliculometry: "Фолликулометрия",
+                dopplerUltrasound: "Допплер УЗИ",
+                geneticTesting: "Генетические тесты",
+                parentageTesting: "Тест на отцовство",
+                hereditaryDiseases: "Наследственные заболевания",
+                geneticConsult: "Генетическая консультация",
+                consultations: "Консультации",
+                reproductologist: "Репродуктолог",
+                andrologist: "Андролог",
+                geneticist: "Генетик",
+                seeOurWork: "Наша работа",
+                advancedIVF: "Современная лаборатория ЭКО",
+                labDesc: "Посмотрите, как наши эмбриологи проводят передовые процедуры ЭКО в нашей современной лаборатории. Наша команда использует новейшие технологии для достижения высоких показателей успеха.",
+                accuracyRate: "Точность",
+                certifiedLab: "Сертифицированная лаборатория",
+                monitoring: "Мониторинг",
+                ourExperts: "Наши эксперты",
+                meetTeam: "Познакомьтесь с командой",
+                teamDesc: "Наша команда опытных специалистов стремится обеспечить вам лучший уход",
+                chiefRepro: "Главный репродуктолог, профессор",
+                geneticistPhD: "Генетик, к.м.н.",
+                andrologist1st: "Андролог, 1-я категория",
+                embryologist: "Эмбриолог, высшая категория",
+                ourTechnology: "Наши технологии",
+                modernEquip: "Современное оборудование",
+                equipDesc: "Мы используем современные технологии для точных результатов и оптимального ухода за пациентами",
+                immunoTests: "Иммуноферментные тесты",
+                ultrasoundImaging: "УЗИ визуализация",
+                surgicalProc: "Хирургические процедуры",
+                cryoStorage: "Криоконсервация",
+                microinjection: "Система микроинъекций",
+                sterileEnv: "Стерильная среда",
+                cervicalExam: "Кольпоскопия",
+                molecularDiag: "Молекулярная диагностика",
+                transparentPricing: "Прозрачные цены",
+                priceList: "Прайс-лист",
+                priceDesc: "Все цены в сомони (TJS), включая НДС",
+                updated: "Обновлено 2025",
+                consultationsTab: "Консультации",
+                initialRepro: "Первичный приём репродуктолога",
+                professorConsult: "Консультация профессора",
+                foreignSpecialist: "Иностранный специалист",
+                coupleConsult: "Консультация пары",
+                ultrasoundTab: "УЗИ",
+                liverGallbladder: "Печень и желчный пузырь",
+                uterusUltrasound: "УЗИ матки",
+                laboratory: "Лаборатория",
+                completeBlood: "Общий анализ крови",
+                hormonePanel: "Гормональная панель (ЛГ)",
+                spermogram: "Спермограмма",
+                geneticParentage: "Генетический тест на отцовство",
+                downloadPrice: "Скачать полный прайс-лист",
+                getInTouch: "Связаться с нами",
+                contactUs: "Контакты",
+                contactDesc: "Готовы начать свой путь? Свяжитесь с нами сегодня, чтобы записаться на консультацию к нашим специалистам.",
+                addressLabel: "Адрес",
+                addressFull: "ул. Н. Махсум 95/4, Душанбе\nРеспублика Таджикистан (Район 102)",
+                phoneLabel: "Телефон",
+                workingHours: "Часы работы",
+                weekdays: "Понедельник - Пятница: 08:00 - 17:00",
+                saturday: "Суббота: 08:00 - 14:00",
+                emailLabel: "Эл. почта",
+                bookAppointment: "Записаться на приём",
+                selectService: "Выберите услугу",
+                consultation: "Консультация",
+                ivfTreatment: "Лечение ЭКО",
+                diagnosticsOpt: "Диагностика",
+                surgeryOpt: "Хирургия",
+                sendMessage: "Отправить сообщение",
+                allRights: "Все права защищены",
+                aboutCenter: "О центре"
+            },
+            tj: {
+                address: "Душанбе, кӯч. Н. Маҳсум 95/4",
+                phone: "(+992) 93 500 65 71",
+                hours: "Дш-Ҷм: 08:00-17:00",
+                medicalCenter: "Маркази Тиббӣ",
+                home: "Асосӣ",
+                aboutUs: "Дар бораи мо",
+                services: "Хизматрасониҳо",
+                ourTeam: "Дастаи мо",
+                equipment: "Таҷҳизот",
+                prices: "Нархҳо",
+                contact: "Тамос",
+                bookNow: "Сабти ном",
+                firstCenter: "Аввалин маркази махсус дар Тоҷикистон",
+                heroTitle1: "Пешрафта",
+                heroTitle2: "Репродуктивӣ",
+                heroTitle3: "Ёрӣ ва Ташхис",
+                heroDesc: "Мо технологияҳои пешрафтаро барои ташхис ва табобати бефарзандӣ истифода мебарем. Аз соли 2010 таъсис ёфта, мо ба оилаҳо бо меҳрубонӣ ва касбият кӯмак мерасонем.",
+                viewPrices: "Нархҳоро бинед",
+                ourServices: "Хизматҳои мо",
+                yearsExp: "Сол таҷриба",
+                happyFamilies: "Оилаҳои хушбахт",
+                expertDoctors: "Духтурони мутахассис",
+                established: "Таъсис",
+                patientRating: "Рейтинги беморон",
+                aboutTitle: "Пешбари тибби репродуктивӣ дар Тоҷикистон",
+                aboutDesc: "Маркази тиббии NASL аввалин муассисаи махсусест, ки дар Ҷумҳурии Тоҷикистон ёрии репродуктивӣ мерасонад. Мо мувофиқи қонунгузорӣ кор мекунем ва усулҳои муосирро истифода мебарем.",
+                licensed: "Литсензиядор ва сертификатшуда",
+                licensedDesc: "Мувофиқи Қонун «Дар бораи фаъолияти тиббии хусусӣ» таъсис ёфтааст",
+                expertTeam: "Дастаи тиббии мутахассис",
+                expertTeamDesc: "Профессорон, номзадҳои илм ва репродуктологҳои категорияи олӣ",
+                advancedTech: "Технологияҳои пешрафта",
+                advancedTechDesc: "Бо технологияҳои ЭКО, ИКСИ ва ПЦР муҷаҳҳаз",
+                whatWeOffer: "Мо чӣ пешниҳод мекунем",
+                medicalServices: "Хизматрасониҳои тиббӣ",
+                servicesDesc: "Ёрии комплексӣ аз рӯи шӯъбаҳо, бо ғамхорӣ ва касбият",
+                reproHealth: "Саломатии репродуктивӣ",
+                ivfProcedures: "Протседураҳои ЭКО ва ИКСИ",
+                cryopreservation: "Криоконсерватсия",
+                infertilityTreatment: "Табобати бефарзандӣ",
+                learnMore: "Бештар",
+                diagnostics: "Ташхис",
+                pcrLab: "Лабораторияи ПЦР",
+                hormoneDiag: "Ташхиси гормонӣ",
+                bloodBiochem: "Биохимияи хун",
+                surgery: "Ҷарроҳӣ",
+                laparoscopy: "Лапароскопия",
+                hysteroscopy: "Гистероскопия",
+                laserSurgery: "Ҷарроҳии лазерӣ (CO2)",
+                ultrasound: "УЗИ",
+                pregnancyScreen: "Скрининги ҳомиладорӣ",
+                folliculometry: "Фолликулометрия",
+                dopplerUltrasound: "Допплер УЗИ",
+                geneticTesting: "Тестҳои генетикӣ",
+                parentageTesting: "Тести падарӣ",
+                hereditaryDiseases: "Бемориҳои ирсӣ",
+                geneticConsult: "Машварати генетикӣ",
+                consultations: "Машваратҳо",
+                reproductologist: "Репродуктолог",
+                andrologist: "Андролог",
+                geneticist: "Генетик",
+                seeOurWork: "Кори мо",
+                advancedIVF: "Лабораторияи муосири ЭКО",
+                labDesc: "Бубинед, ки эмбриологҳои мо чӣ гуна протседураҳои пешрафтаи ЭКО-ро дар лабораторияи муосири мо мегузаронанд.",
+                accuracyRate: "Дақиқӣ",
+                certifiedLab: "Лабораторияи сертификатшуда",
+                monitoring: "Мониторинг",
+                ourExperts: "Мутахассисони мо",
+                meetTeam: "Бо даста шинос шавед",
+                teamDesc: "Дастаи мутахассисони ботаҷрибаи мо барои шумо беҳтарин хизматрасониро таъмин мекунад",
+                chiefRepro: "Сарварии репродуктолог, профессор",
+                geneticistPhD: "Генетик, н.и.т.",
+                andrologist1st: "Андролог, категорияи 1",
+                embryologist: "Эмбриолог, категорияи олӣ",
+                ourTechnology: "Технологияҳои мо",
+                modernEquip: "Таҷҳизоти муосир",
+                equipDesc: "Мо технологияҳои муосирро барои натиҷаҳои дақиқ ва нигоҳубини оптималии беморон истифода мебарем",
+                immunoTests: "Тестҳои иммуноферментӣ",
+                ultrasoundImaging: "Тасвирбардории УЗИ",
+                surgicalProc: "Протседураҳои ҷарроҳӣ",
+                cryoStorage: "Криоконсерватсия",
+                microinjection: "Системаи микроинъексия",
+                sterileEnv: "Муҳити стерилӣ",
+                cervicalExam: "Кольпоскопия",
+                molecularDiag: "Ташхиси молекулавӣ",
+                transparentPricing: "Нархҳои шаффоф",
+                priceList: "Рӯйхати нархҳо",
+                priceDesc: "Ҳамаи нархҳо бо сомонӣ (TJS), бо ҳисоби ААИ",
+                updated: "Навшуда 2025",
+                consultationsTab: "Машваратҳо",
+                initialRepro: "Қабули ибтидоии репродуктолог",
+                professorConsult: "Машварати профессор",
+                foreignSpecialist: "Мутахассиси хориҷӣ",
+                coupleConsult: "Машварати ҷуфт",
+                ultrasoundTab: "УЗИ",
+                liverGallbladder: "Ҷигар ва талхадон",
+                uterusUltrasound: "УЗИ-и бачадон",
+                laboratory: "Лаборатория",
+                completeBlood: "Таҳлили умумии хун",
+                hormonePanel: "Панели гормонӣ (ЛГ)",
+                spermogram: "Спермограмма",
+                geneticParentage: "Тести генетикии падарӣ",
+                downloadPrice: "Рӯйхати пурраи нархҳоро боргирӣ кунед",
+                getInTouch: "Бо мо тамос гиред",
+                contactUs: "Тамос",
+                contactDesc: "Оё шумо омодаед сафари худро оғоз кунед? Имрӯз бо мо тамос гиред, то барои машварат бо мутахассисони мо сабти ном кунед.",
+                addressLabel: "Суроға",
+                addressFull: "кӯч. Н. Маҳсум 95/4, Душанбе\nҶумҳурии Тоҷикистон (Ноҳияи 102)",
+                phoneLabel: "Телефон",
+                workingHours: "Соатҳои корӣ",
+                weekdays: "Душанбе - Ҷумъа: 08:00 - 17:00",
+                saturday: "Шанбе: 08:00 - 14:00",
+                emailLabel: "Почтаи электронӣ",
+                bookAppointment: "Сабти ном барои қабул",
+                selectService: "Хизматро интихоб кунед",
+                consultation: "Машварат",
+                ivfTreatment: "Табобати ЭКО",
+                diagnosticsOpt: "Ташхис",
+                surgeryOpt: "Ҷарроҳӣ",
+                sendMessage: "Паём фиристед",
+                allRights: "Ҳамаи ҳуқуқҳо ҳифз шудаанд",
+                aboutCenter: "Дар бораи марказ"
+            }
+        };
+
+        let currentLang = 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.querySelectorAll('[data-lang-key]').forEach(el => {
+                const key = el.getAttribute('data-lang-key');
+                if (translations[lang][key]) {
+                    if (el.tagName === 'INPUT' && el.type === 'text') {
+                        el.placeholder = translations[lang][key];
+                    } else {
+                        el.textContent = translations[lang][key];
+                    }
+                }
+            });
+            
+            // Update language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang === 'tj' ? 'tg' : lang;
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+
+    <!-- Top Bar (Dark background - white logo) -->
     <div class="bg-slate-900 text-slate-300 text-xs py-2.5 hidden md:block">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <div class="flex gap-8">
                 <span class="flex items-center gap-2 hover:text-white transition">
                     <i data-lucide="map-pin" class="w-3.5 h-3.5 text-primary-400"></i> 
-                    Dushanbe, N. Mahsum St. 95/4
+                    <span data-lang-key="address">Dushanbe, N. Mahsum St. 95/4</span>
                 </span>
                 <span class="flex items-center gap-2 hover:text-white transition">
                     <i data-lucide="phone" class="w-3.5 h-3.5 text-primary-400"></i> 
-                    (+992) 93 500 65 71
+                    <span data-lang-key="phone">(+992) 93 500 65 71</span>
                 </span>
                 <span class="flex items-center gap-2 hover:text-white transition">
                     <i data-lucide="clock" class="w-3.5 h-3.5 text-primary-400"></i> 
-                    Mon-Fri: 08:00-17:00
+                    <span data-lang-key="hours">Mon-Fri: 08:00-17:00</span>
                 </span>
             </div>
             <div class="flex gap-4 items-center">
                 <div class="flex gap-3 font-semibold">
-                    <a href="#" class="hover:text-primary-400 transition">TJ</a>
+                    <button class="lang-btn hover:text-primary-400 transition" data-lang="tj" onclick="setLanguage('tj')">TJ</button>
                     <span class="text-slate-600">|</span>
-                    <a href="#" class="hover:text-primary-400 transition">RU</a>
+                    <button class="lang-btn hover:text-primary-400 transition" data-lang="ru" onclick="setLanguage('ru')">RU</button>
                     <span class="text-slate-600">|</span>
-                    <a href="#" class="text-primary-400">EN</a>
+                    <button class="lang-btn active hover:text-primary-400 transition" data-lang="en" onclick="setLanguage('en')">EN</button>
                 </div>
                 <div class="flex gap-3 ml-4 border-l border-slate-700 pl-4">
                     <a href="#" class="hover:text-primary-400 transition"><i data-lucide="facebook" class="w-4 h-4"></i></a>
@@ -174,31 +588,29 @@
         </div>
     </div>
 
-    <!-- Navigation -->
+    <!-- Navigation (Light background - grey logo) -->
     <nav class="bg-white/95 backdrop-blur-lg shadow-sm sticky top-0 z-50 border-b border-slate-100">
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <a href="#home" class="flex items-center gap-3 group">
-                    <div class="w-12 h-12 bg-gradient-to-br from-primary-600 to-cyan-500 rounded-xl flex items-center justify-center text-white font-bold text-2xl shadow-lg shadow-primary-600/30 group-hover:shadow-primary-600/50 transition-all duration-300 group-hover:scale-105">
-                        N
-                    </div>
+                    <img src="images/nasl-logo.png" alt="NASL" class="w-12 h-12 object-contain logo-grey group-hover:scale-105 transition-transform">
                     <div>
                         <h1 class="text-2xl font-extrabold text-slate-900 leading-none tracking-tight">NASL</h1>
-                        <p class="text-xs text-slate-500 uppercase tracking-widest font-medium">Medical Center</p>
+                        <p class="text-xs text-slate-500 uppercase tracking-widest font-medium" data-lang-key="medicalCenter">Medical Center</p>
                     </div>
                 </a>
 
                 <div class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-slate-600">
-                    <a href="#home" class="nav-link hover:text-primary-600 transition py-2">Home</a>
-                    <a href="#about" class="nav-link hover:text-primary-600 transition py-2">About Us</a>
-                    <a href="#services" class="nav-link hover:text-primary-600 transition py-2">Services</a>
-                    <a href="#team" class="nav-link hover:text-primary-600 transition py-2">Our Team</a>
-                    <a href="#equipment" class="nav-link hover:text-primary-600 transition py-2">Equipment</a>
-                    <a href="#pricing" class="nav-link hover:text-primary-600 transition py-2">Prices</a>
-                    <a href="#contact" class="nav-link hover:text-primary-600 transition py-2">Contact</a>
+                    <a href="#home" class="nav-link hover:text-primary-600 transition py-2" data-lang-key="home">Home</a>
+                    <a href="#about" class="nav-link hover:text-primary-600 transition py-2" data-lang-key="aboutUs">About Us</a>
+                    <a href="#services" class="nav-link hover:text-primary-600 transition py-2" data-lang-key="services">Services</a>
+                    <a href="#team" class="nav-link hover:text-primary-600 transition py-2" data-lang-key="ourTeam">Our Team</a>
+                    <a href="#equipment" class="nav-link hover:text-primary-600 transition py-2" data-lang-key="equipment">Equipment</a>
+                    <a href="#pricing" class="nav-link hover:text-primary-600 transition py-2" data-lang-key="prices">Prices</a>
+                    <a href="#contact" class="nav-link hover:text-primary-600 transition py-2" data-lang-key="contact">Contact</a>
                     
                     <a href="#contact" class="ml-4 bg-gradient-to-r from-primary-600 to-cyan-500 text-white px-6 py-3 rounded-full hover:shadow-lg hover:shadow-primary-600/30 transition-all duration-300 flex items-center gap-2 font-bold hover:scale-105">
-                        <i data-lucide="calendar" class="w-4 h-4"></i> Book Now
+                        <i data-lucide="calendar" class="w-4 h-4"></i> <span data-lang-key="bookNow">Book Now</span>
                     </a>
                 </div>
 
@@ -210,14 +622,14 @@
 
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-t p-6 flex flex-col gap-4 shadow-2xl absolute w-full left-0 top-full">
-            <a href="#home" class="p-3 hover:bg-primary-50 rounded-xl text-slate-700 font-medium transition" onclick="toggleMenu()">Home</a>
-            <a href="#about" class="p-3 hover:bg-primary-50 rounded-xl text-slate-700 font-medium transition" onclick="toggleMenu()">About Us</a>
-            <a href="#services" class="p-3 hover:bg-primary-50 rounded-xl text-slate-700 font-medium transition" onclick="toggleMenu()">Services</a>
-            <a href="#team" class="p-3 hover:bg-primary-50 rounded-xl text-slate-700 font-medium transition" onclick="toggleMenu()">Our Team</a>
-            <a href="#equipment" class="p-3 hover:bg-primary-50 rounded-xl text-slate-700 font-medium transition" onclick="toggleMenu()">Equipment</a>
-            <a href="#pricing" class="p-3 hover:bg-primary-50 rounded-xl text-slate-700 font-medium transition" onclick="toggleMenu()">Prices</a>
-            <a href="#contact" class="p-3 hover:bg-primary-50 rounded-xl text-slate-700 font-medium transition" onclick="toggleMenu()">Contact</a>
-            <a href="#contact" class="mt-2 bg-gradient-to-r from-primary-600 to-cyan-500 text-white p-4 rounded-xl font-bold text-center" onclick="toggleMenu()">Book Appointment</a>
+            <a href="#home" class="p-3 hover:bg-primary-50 rounded-xl text-slate-700 font-medium transition" onclick="toggleMenu()" data-lang-key="home">Home</a>
+            <a href="#about" class="p-3 hover:bg-primary-50 rounded-xl text-slate-700 font-medium transition" onclick="toggleMenu()" data-lang-key="aboutUs">About Us</a>
+            <a href="#services" class="p-3 hover:bg-primary-50 rounded-xl text-slate-700 font-medium transition" onclick="toggleMenu()" data-lang-key="services">Services</a>
+            <a href="#team" class="p-3 hover:bg-primary-50 rounded-xl text-slate-700 font-medium transition" onclick="toggleMenu()" data-lang-key="ourTeam">Our Team</a>
+            <a href="#equipment" class="p-3 hover:bg-primary-50 rounded-xl text-slate-700 font-medium transition" onclick="toggleMenu()" data-lang-key="equipment">Equipment</a>
+            <a href="#pricing" class="p-3 hover:bg-primary-50 rounded-xl text-slate-700 font-medium transition" onclick="toggleMenu()" data-lang-key="prices">Prices</a>
+            <a href="#contact" class="p-3 hover:bg-primary-50 rounded-xl text-slate-700 font-medium transition" onclick="toggleMenu()" data-lang-key="contact">Contact</a>
+            <a href="#contact" class="mt-2 bg-gradient-to-r from-primary-600 to-cyan-500 text-white p-4 rounded-xl font-bold text-center" onclick="toggleMenu()" data-lang-key="bookAppointment">Book Appointment</a>
         </div>
     </nav>
 
@@ -233,23 +645,23 @@
                 <div class="lg:w-1/2 space-y-8">
                     <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur text-primary-700 text-sm font-bold border border-primary-100 shadow-sm animate-fade-in">
                         <i data-lucide="award" class="w-4 h-4"></i> 
-                        First Specialized Center in Tajikistan
+                        <span data-lang-key="firstCenter">First Specialized Center in Tajikistan</span>
                     </div>
                     
                     <h1 class="text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight animate-fade-in-up" style="animation-delay: 0.1s">
-                        Advanced <span class="gradient-text">Reproductive</span> Care & Diagnostics
+                        <span data-lang-key="heroTitle1">Advanced</span> <span class="gradient-text" data-lang-key="heroTitle2">Reproductive</span> <span data-lang-key="heroTitle3">Care & Diagnostics</span>
                     </h1>
                     
-                    <p class="text-xl text-slate-600 leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s">
+                    <p class="text-xl text-slate-600 leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s" data-lang-key="heroDesc">
                         We use cutting-edge technology for the diagnosis and treatment of infertility. Established in 2010, we are dedicated to helping families grow with compassion and expertise.
                     </p>
                     
                     <div class="flex flex-wrap gap-4 pt-4 animate-fade-in-up" style="animation-delay: 0.3s">
                         <a href="#pricing" class="bg-gradient-to-r from-primary-600 to-cyan-500 text-white px-8 py-4 rounded-full font-bold hover:shadow-xl hover:shadow-primary-600/30 transition-all duration-300 flex items-center gap-2 hover:scale-105">
-                            <i data-lucide="file-text" class="w-5 h-5"></i> View Prices
+                            <i data-lucide="file-text" class="w-5 h-5"></i> <span data-lang-key="viewPrices">View Prices</span>
                         </a>
                         <a href="#services" class="bg-white text-slate-700 border-2 border-slate-200 px-8 py-4 rounded-full font-bold hover:border-primary-300 hover:bg-primary-50 transition-all duration-300 flex items-center gap-2">
-                            <i data-lucide="stethoscope" class="w-5 h-5"></i> Our Services
+                            <i data-lucide="stethoscope" class="w-5 h-5"></i> <span data-lang-key="ourServices">Our Services</span>
                         </a>
                     </div>
                     
@@ -257,15 +669,15 @@
                     <div class="flex gap-8 pt-8 animate-fade-in-up" style="animation-delay: 0.4s">
                         <div class="text-center">
                             <div class="text-4xl font-extrabold gradient-text">15+</div>
-                            <div class="text-sm text-slate-500 font-medium">Years Experience</div>
+                            <div class="text-sm text-slate-500 font-medium" data-lang-key="yearsExp">Years Experience</div>
                         </div>
                         <div class="text-center">
                             <div class="text-4xl font-extrabold gradient-text">5000+</div>
-                            <div class="text-sm text-slate-500 font-medium">Happy Families</div>
+                            <div class="text-sm text-slate-500 font-medium" data-lang-key="happyFamilies">Happy Families</div>
                         </div>
                         <div class="text-center">
                             <div class="text-4xl font-extrabold gradient-text">20+</div>
-                            <div class="text-sm text-slate-500 font-medium">Expert Doctors</div>
+                            <div class="text-sm text-slate-500 font-medium" data-lang-key="expertDoctors">Expert Doctors</div>
                         </div>
                     </div>
                 </div>
@@ -281,7 +693,7 @@
                                 <i data-lucide="heart-pulse" class="w-6 h-6"></i>
                             </div>
                             <div>
-                                <p class="text-xs uppercase font-bold text-slate-400 tracking-wider">Established</p>
+                                <p class="text-xs uppercase font-bold text-slate-400 tracking-wider" data-lang-key="established">Established</p>
                                 <p class="text-2xl font-extrabold text-slate-900">2010</p>
                             </div>
                         </div>
@@ -298,7 +710,7 @@
                                 </div>
                                 <span class="font-bold text-slate-900">4.9</span>
                             </div>
-                            <p class="text-xs text-slate-500 mt-1">Patient Rating</p>
+                            <p class="text-xs text-slate-500 mt-1" data-lang-key="patientRating">Patient Rating</p>
                         </div>
                     </div>
                 </div>
@@ -310,48 +722,55 @@
     <section id="about" class="py-24 bg-white">
         <div class="container mx-auto px-6">
             <div class="flex flex-col lg:flex-row items-center gap-16">
-                <div class="lg:w-1/2 relative">
-                    <div class="grid grid-cols-2 gap-4">
-                        <img src="images/hospital.jpg" alt="Hospital Interior" class="rounded-2xl shadow-lg h-64 object-cover w-full">
-                        <img src="images/lab1.jpg" alt="Laboratory" class="rounded-2xl shadow-lg h-64 object-cover w-full mt-8">
-                        <img src="images/lab2.jpg" alt="Medical Research" class="rounded-2xl shadow-lg h-64 object-cover w-full -mt-8">
-                        <img src="images/lab4.jpg" alt="Petri Dish" class="rounded-2xl shadow-lg h-64 object-cover w-full">
+                <div class="lg:w-1/2">
+                    <div class="relative">
+                        <img src="images/lab1.jpg" alt="NASL Laboratory" class="rounded-3xl shadow-2xl w-full h-[450px] object-cover">
+                        <div class="absolute -bottom-8 -right-8 bg-gradient-to-br from-primary-600 to-cyan-500 text-white p-8 rounded-2xl shadow-xl">
+                            <div class="text-5xl font-extrabold">15+</div>
+                            <div class="text-sm opacity-80" data-lang-key="yearsExp">Years Experience</div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="lg:w-1/2 space-y-6">
-                    <span class="text-primary-600 font-bold uppercase tracking-widest text-sm">About The Center</span>
-                    <h2 class="text-4xl font-extrabold text-slate-900 leading-tight">Leading Reproductive Medicine in Tajikistan</h2>
-                    <p class="text-lg text-slate-600 leading-relaxed">
+                <div class="lg:w-1/2 space-y-8">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 text-primary-700 text-sm font-bold">
+                        <i data-lucide="info" class="w-4 h-4"></i> <span data-lang-key="aboutCenter">About the Center</span>
+                    </div>
+                    
+                    <h2 class="text-4xl font-extrabold text-slate-900" data-lang-key="aboutTitle">Leading Reproductive Medicine in Tajikistan</h2>
+                    
+                    <p class="text-lg text-slate-600 leading-relaxed" data-lang-key="aboutDesc">
                         The NASL Medical Center is the first specialized institution providing reproductive assistance in the Republic of Tajikistan. We operate under strict legal compliance and utilize state-of-the-art methods to help families achieve their dreams.
                     </p>
                     
-                    <div class="space-y-4 pt-4">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-primary-100 text-primary-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 bg-slate-50 rounded-xl hover:bg-primary-50 transition">
+                            <div class="bg-primary-100 p-3 rounded-lg text-primary-600">
                                 <i data-lucide="shield-check" class="w-6 h-6"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-slate-900">Licensed & Certified</h4>
-                                <p class="text-slate-600 text-sm">Established in accordance with the Law "On Private Medical Activities"</p>
+                                <h4 class="font-bold text-slate-900" data-lang-key="licensed">Licensed & Certified</h4>
+                                <p class="text-sm text-slate-600" data-lang-key="licensedDesc">Established in accordance with the Law "On Private Medical Activities"</p>
                             </div>
                         </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-cyan-100 text-cyan-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        
+                        <div class="flex items-start gap-4 p-4 bg-slate-50 rounded-xl hover:bg-primary-50 transition">
+                            <div class="bg-primary-100 p-3 rounded-lg text-primary-600">
                                 <i data-lucide="users" class="w-6 h-6"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-slate-900">Expert Medical Team</h4>
-                                <p class="text-slate-600 text-sm">Includes Professors, PhDs, and highest category reproductologists</p>
+                                <h4 class="font-bold text-slate-900" data-lang-key="expertTeam">Expert Medical Team</h4>
+                                <p class="text-sm text-slate-600" data-lang-key="expertTeamDesc">Includes Professors, PhDs, and highest category reproductologists</p>
                             </div>
                         </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        
+                        <div class="flex items-start gap-4 p-4 bg-slate-50 rounded-xl hover:bg-primary-50 transition">
+                            <div class="bg-primary-100 p-3 rounded-lg text-primary-600">
                                 <i data-lucide="microscope" class="w-6 h-6"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-slate-900">Advanced Technology</h4>
-                                <p class="text-slate-600 text-sm">Equipped with IVF, ICSI, and PCR technologies</p>
+                                <h4 class="font-bold text-slate-900" data-lang-key="advancedTech">Advanced Technology</h4>
+                                <p class="text-sm text-slate-600" data-lang-key="advancedTechDesc">Equipped with IVF, ICSI, and PCR technologies</p>
                             </div>
                         </div>
                     </div>
@@ -361,162 +780,110 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-24 bg-gradient-to-b from-slate-50 to-white">
+    <section id="services" class="py-24 bg-slate-50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <span class="text-primary-600 font-bold uppercase tracking-widest text-sm">What We Offer</span>
-                <h2 class="text-4xl font-extrabold text-slate-900 mt-3">Medical Services</h2>
-                <p class="text-slate-600 mt-4 max-w-2xl mx-auto">Comprehensive care categorized by department, delivered with compassion and expertise</p>
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 text-primary-700 text-sm font-bold mb-4">
+                    <i data-lucide="heart-handshake" class="w-4 h-4"></i> <span data-lang-key="whatWeOffer">What We Offer</span>
+                </div>
+                <h2 class="text-4xl font-extrabold text-slate-900 mb-4" data-lang-key="medicalServices">Medical Services</h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto" data-lang-key="servicesDesc">Comprehensive care categorized by department, delivered with compassion and expertise</p>
             </div>
-
+            
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service Card 1 -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 card-hover">
-                    <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-pink-500/30">
-                        <i data-lucide="baby" class="w-8 h-8 text-white"></i>
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
+                    <div class="bg-gradient-to-br from-pink-500 to-rose-500 w-16 h-16 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg shadow-pink-500/30">
+                        <i data-lucide="baby" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-slate-900">Reproductive Health</h3>
-                    <ul class="text-slate-600 space-y-3 mb-6">
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
-                            <span>IVF & ICSI Procedures</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
-                            <span>Cryopreservation</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
-                            <span>Infertility Treatment</span>
-                        </li>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3" data-lang-key="reproHealth">Reproductive Health</h3>
+                    <ul class="space-y-2 text-slate-600 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> <span data-lang-key="ivfProcedures">IVF & ICSI Procedures</span></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> <span data-lang-key="cryopreservation">Cryopreservation</span></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> <span data-lang-key="infertilityTreatment">Infertility Treatment</span></li>
                     </ul>
-                    <a href="#pricing" class="text-primary-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
-                        Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    <a href="#contact" class="text-primary-600 font-bold flex items-center gap-2 hover:gap-3 transition-all">
+                        <span data-lang-key="learnMore">Learn More</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                 </div>
-
+                
                 <!-- Service Card 2 -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 card-hover">
-                    <div class="w-16 h-16 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-teal-500/30">
-                        <i data-lucide="test-tube-2" class="w-8 h-8 text-white"></i>
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
+                    <div class="bg-gradient-to-br from-blue-500 to-cyan-500 w-16 h-16 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg shadow-blue-500/30">
+                        <i data-lucide="test-tubes" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-slate-900">Diagnostics</h3>
-                    <ul class="text-slate-600 space-y-3 mb-6">
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
-                            <span>PCR Laboratory</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
-                            <span>Hormone Diagnostics</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
-                            <span>Blood Biochemistry</span>
-                        </li>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3" data-lang-key="diagnostics">Diagnostics</h3>
+                    <ul class="space-y-2 text-slate-600 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> <span data-lang-key="pcrLab">PCR Laboratory</span></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> <span data-lang-key="hormoneDiag">Hormone Diagnostics</span></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> <span data-lang-key="bloodBiochem">Blood Biochemistry</span></li>
                     </ul>
-                    <a href="#pricing" class="text-primary-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
-                        Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    <a href="#contact" class="text-primary-600 font-bold flex items-center gap-2 hover:gap-3 transition-all">
+                        <span data-lang-key="learnMore">Learn More</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                 </div>
-
+                
                 <!-- Service Card 3 -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 card-hover">
-                    <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-indigo-500/30">
-                        <i data-lucide="activity" class="w-8 h-8 text-white"></i>
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
+                    <div class="bg-gradient-to-br from-purple-500 to-violet-500 w-16 h-16 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg shadow-purple-500/30">
+                        <i data-lucide="scissors" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-slate-900">Surgery</h3>
-                    <ul class="text-slate-600 space-y-3 mb-6">
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
-                            <span>Laparoscopy</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
-                            <span>Hysteroscopy</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
-                            <span>Laser Surgery (CO2)</span>
-                        </li>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3" data-lang-key="surgery">Surgery</h3>
+                    <ul class="space-y-2 text-slate-600 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> <span data-lang-key="laparoscopy">Laparoscopy</span></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> <span data-lang-key="hysteroscopy">Hysteroscopy</span></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> <span data-lang-key="laserSurgery">Laser Surgery (CO2)</span></li>
                     </ul>
-                    <a href="#pricing" class="text-primary-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
-                        Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    <a href="#contact" class="text-primary-600 font-bold flex items-center gap-2 hover:gap-3 transition-all">
+                        <span data-lang-key="learnMore">Learn More</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                 </div>
-
+                
                 <!-- Service Card 4 -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 card-hover">
-                    <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-amber-500/30">
-                        <i data-lucide="scan" class="w-8 h-8 text-white"></i>
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
+                    <div class="bg-gradient-to-br from-teal-500 to-emerald-500 w-16 h-16 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg shadow-teal-500/30">
+                        <i data-lucide="scan" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-slate-900">Ultrasound</h3>
-                    <ul class="text-slate-600 space-y-3 mb-6">
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
-                            <span>Pregnancy Screening</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
-                            <span>Folliculometry</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
-                            <span>Doppler Ultrasound</span>
-                        </li>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3" data-lang-key="ultrasound">Ultrasound</h3>
+                    <ul class="space-y-2 text-slate-600 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> <span data-lang-key="pregnancyScreen">Pregnancy Screening</span></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> <span data-lang-key="folliculometry">Folliculometry</span></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> <span data-lang-key="dopplerUltrasound">Doppler Ultrasound</span></li>
                     </ul>
-                    <a href="#pricing" class="text-primary-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
-                        Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    <a href="#contact" class="text-primary-600 font-bold flex items-center gap-2 hover:gap-3 transition-all">
+                        <span data-lang-key="learnMore">Learn More</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                 </div>
-
+                
                 <!-- Service Card 5 -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 card-hover">
-                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-emerald-500/30">
-                        <i data-lucide="dna" class="w-8 h-8 text-white"></i>
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
+                    <div class="bg-gradient-to-br from-amber-500 to-orange-500 w-16 h-16 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg shadow-amber-500/30">
+                        <i data-lucide="dna" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-slate-900">Genetic Testing</h3>
-                    <ul class="text-slate-600 space-y-3 mb-6">
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
-                            <span>Parentage Testing</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
-                            <span>Hereditary Diseases</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
-                            <span>Genetic Consultation</span>
-                        </li>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3" data-lang-key="geneticTesting">Genetic Testing</h3>
+                    <ul class="space-y-2 text-slate-600 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> <span data-lang-key="parentageTesting">Parentage Testing</span></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> <span data-lang-key="hereditaryDiseases">Hereditary Diseases</span></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> <span data-lang-key="geneticConsult">Genetic Consultation</span></li>
                     </ul>
-                    <a href="#pricing" class="text-primary-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
-                        Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    <a href="#contact" class="text-primary-600 font-bold flex items-center gap-2 hover:gap-3 transition-all">
+                        <span data-lang-key="learnMore">Learn More</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                 </div>
-
+                
                 <!-- Service Card 6 -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 card-hover">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-primary-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/30">
-                        <i data-lucide="heart" class="w-8 h-8 text-white"></i>
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
+                    <div class="bg-gradient-to-br from-indigo-500 to-blue-500 w-16 h-16 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg shadow-indigo-500/30">
+                        <i data-lucide="stethoscope" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-slate-900">Consultations</h3>
-                    <ul class="text-slate-600 space-y-3 mb-6">
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
-                            <span>Reproductologist</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
-                            <span>Andrologist</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
-                            <span>Geneticist</span>
-                        </li>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3" data-lang-key="consultations">Consultations</h3>
+                    <ul class="space-y-2 text-slate-600 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> <span data-lang-key="reproductologist">Reproductologist</span></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> <span data-lang-key="andrologist">Andrologist</span></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> <span data-lang-key="geneticist">Geneticist</span></li>
                     </ul>
-                    <a href="#pricing" class="text-primary-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all">
-                        Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    <a href="#contact" class="text-primary-600 font-bold flex items-center gap-2 hover:gap-3 transition-all">
+                        <span data-lang-key="learnMore">Learn More</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                 </div>
             </div>
@@ -524,36 +891,35 @@
     </section>
 
     <!-- Video Section -->
-    <section class="py-24 bg-slate-900 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20">
-            <div class="absolute inset-0 bg-gradient-to-r from-primary-600 to-cyan-600"></div>
-        </div>
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
-                <div class="lg:w-1/2">
-                    <span class="text-primary-400 font-bold uppercase tracking-widest text-sm">See Our Work</span>
-                    <h2 class="text-4xl font-extrabold text-white mt-3 mb-6">Advanced IVF Laboratory</h2>
-                    <p class="text-slate-300 text-lg leading-relaxed mb-8">
+    <section class="py-24 bg-slate-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 space-y-8">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-primary-300 text-sm font-bold">
+                        <i data-lucide="video" class="w-4 h-4"></i> <span data-lang-key="seeOurWork">See Our Work</span>
+                    </div>
+                    <h2 class="text-4xl font-extrabold" data-lang-key="advancedIVF">Advanced IVF Laboratory</h2>
+                    <p class="text-lg text-slate-300 leading-relaxed" data-lang-key="labDesc">
                         Watch our embryologists perform cutting-edge IVF procedures in our state-of-the-art laboratory. Our team uses the latest technology to ensure the highest success rates for our patients.
                     </p>
-                    <div class="flex gap-6">
+                    <div class="flex gap-8">
                         <div class="text-center">
-                            <div class="text-3xl font-extrabold text-white">99.9%</div>
-                            <div class="text-sm text-slate-400">Accuracy Rate</div>
+                            <div class="text-3xl font-extrabold text-primary-400">99.9%</div>
+                            <div class="text-sm text-slate-400" data-lang-key="accuracyRate">Accuracy Rate</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-3xl font-extrabold text-white">ISO</div>
-                            <div class="text-sm text-slate-400">Certified Lab</div>
+                            <div class="text-3xl font-extrabold text-primary-400">ISO</div>
+                            <div class="text-sm text-slate-400" data-lang-key="certifiedLab">Certified Lab</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-3xl font-extrabold text-white">24/7</div>
-                            <div class="text-sm text-slate-400">Monitoring</div>
+                            <div class="text-3xl font-extrabold text-primary-400">24/7</div>
+                            <div class="text-sm text-slate-400" data-lang-key="monitoring">Monitoring</div>
                         </div>
                     </div>
                 </div>
                 <div class="lg:w-1/2">
-                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-                        <video controls class="w-full rounded-2xl" poster="images/lab3.jpg">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                        <video controls class="w-full aspect-video object-cover" poster="images/lab2.jpg">
                             <source src="videos/ivf-lab.mov" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -567,86 +933,56 @@
     <section id="team" class="py-24 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <span class="text-primary-600 font-bold uppercase tracking-widest text-sm">Our Experts</span>
-                <h2 class="text-4xl font-extrabold text-slate-900 mt-3">Meet Our Team</h2>
-                <p class="text-slate-600 mt-4 max-w-2xl mx-auto">Our team of experienced professionals is dedicated to providing you with the best care</p>
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 text-primary-700 text-sm font-bold mb-4">
+                    <i data-lucide="users" class="w-4 h-4"></i> <span data-lang-key="ourExperts">Our Experts</span>
+                </div>
+                <h2 class="text-4xl font-extrabold text-slate-900 mb-4" data-lang-key="meetTeam">Meet Our Team</h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto" data-lang-key="teamDesc">Our team of experienced professionals is dedicated to providing you with the best care</p>
             </div>
-
+            
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Team Member 1 -->
-                <div class="group">
-                    <div class="relative overflow-hidden rounded-2xl mb-4">
-                        <img src="images/doctor5.jpg" alt="Dr. Senior Specialist" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <div class="flex gap-3">
-                                <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white hover:bg-primary-600 transition">
-                                    <i data-lucide="linkedin" class="w-5 h-5"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white hover:bg-primary-600 transition">
-                                    <i data-lucide="mail" class="w-5 h-5"></i>
-                                </a>
-                            </div>
+                <div class="card-hover bg-slate-50 rounded-2xl p-6 text-center">
+                    <div class="relative mb-6">
+                        <img src="images/doctor2.jpg" alt="Dr. Akbar Rahimov" class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-white shadow-lg">
+                        <div class="absolute bottom-0 right-1/2 translate-x-8 bg-primary-600 text-white p-2 rounded-full">
+                            <i data-lucide="award" class="w-4 h-4"></i>
                         </div>
                     </div>
-                    <h4 class="font-bold text-lg text-slate-900">Dr. Akbar Rahimov</h4>
-                    <p class="text-primary-600 text-sm font-medium">Chief Reproductologist, Professor</p>
+                    <h3 class="text-lg font-bold text-slate-900">Dr. Akbar Rahimov</h3>
+                    <p class="text-sm text-primary-600 font-medium" data-lang-key="chiefRepro">Chief Reproductologist, Professor</p>
                 </div>
-
-                <!-- Team Member 2 -->
-                <div class="group">
-                    <div class="relative overflow-hidden rounded-2xl mb-4">
-                        <img src="images/doctor4.jpg" alt="Dr. Female Specialist" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <div class="flex gap-3">
-                                <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white hover:bg-primary-600 transition">
-                                    <i data-lucide="linkedin" class="w-5 h-5"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white hover:bg-primary-600 transition">
-                                    <i data-lucide="mail" class="w-5 h-5"></i>
-                                </a>
-                            </div>
+                
+                <div class="card-hover bg-slate-50 rounded-2xl p-6 text-center">
+                    <div class="relative mb-6">
+                        <img src="images/doctor3.jpg" alt="Dr. Malika Karimova" class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-white shadow-lg">
+                        <div class="absolute bottom-0 right-1/2 translate-x-8 bg-primary-600 text-white p-2 rounded-full">
+                            <i data-lucide="dna" class="w-4 h-4"></i>
                         </div>
                     </div>
-                    <h4 class="font-bold text-lg text-slate-900">Dr. Malika Karimova</h4>
-                    <p class="text-primary-600 text-sm font-medium">Geneticist, PhD</p>
+                    <h3 class="text-lg font-bold text-slate-900">Dr. Malika Karimova</h3>
+                    <p class="text-sm text-primary-600 font-medium" data-lang-key="geneticistPhD">Geneticist, PhD</p>
                 </div>
-
-                <!-- Team Member 3 -->
-                <div class="group">
-                    <div class="relative overflow-hidden rounded-2xl mb-4">
-                        <img src="images/doctor2.jpg" alt="Dr. Male Specialist" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <div class="flex gap-3">
-                                <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white hover:bg-primary-600 transition">
-                                    <i data-lucide="linkedin" class="w-5 h-5"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white hover:bg-primary-600 transition">
-                                    <i data-lucide="mail" class="w-5 h-5"></i>
-                                </a>
-                            </div>
+                
+                <div class="card-hover bg-slate-50 rounded-2xl p-6 text-center">
+                    <div class="relative mb-6">
+                        <img src="images/doctor4.jpg" alt="Dr. Farrukh Nazarov" class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-white shadow-lg">
+                        <div class="absolute bottom-0 right-1/2 translate-x-8 bg-primary-600 text-white p-2 rounded-full">
+                            <i data-lucide="activity" class="w-4 h-4"></i>
                         </div>
                     </div>
-                    <h4 class="font-bold text-lg text-slate-900">Dr. Farrukh Nazarov</h4>
-                    <p class="text-primary-600 text-sm font-medium">Andrologist, 1st Category</p>
+                    <h3 class="text-lg font-bold text-slate-900">Dr. Farrukh Nazarov</h3>
+                    <p class="text-sm text-primary-600 font-medium" data-lang-key="andrologist1st">Andrologist, 1st Category</p>
                 </div>
-
-                <!-- Team Member 4 -->
-                <div class="group">
-                    <div class="relative overflow-hidden rounded-2xl mb-4">
-                        <img src="images/doctor6.jpg" alt="Dr. Senior Doctor" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <div class="flex gap-3">
-                                <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white hover:bg-primary-600 transition">
-                                    <i data-lucide="linkedin" class="w-5 h-5"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 bg-white/20 backdrop-blur rounded-full flex items-center justify-center text-white hover:bg-primary-600 transition">
-                                    <i data-lucide="mail" class="w-5 h-5"></i>
-                                </a>
-                            </div>
+                
+                <div class="card-hover bg-slate-50 rounded-2xl p-6 text-center">
+                    <div class="relative mb-6">
+                        <img src="images/doctor5.jpg" alt="Dr. Rustam Saidov" class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-white shadow-lg">
+                        <div class="absolute bottom-0 right-1/2 translate-x-8 bg-primary-600 text-white p-2 rounded-full">
+                            <i data-lucide="microscope" class="w-4 h-4"></i>
                         </div>
                     </div>
-                    <h4 class="font-bold text-lg text-slate-900">Dr. Rustam Saidov</h4>
-                    <p class="text-primary-600 text-sm font-medium">Embryologist, Highest Category</p>
+                    <h3 class="text-lg font-bold text-slate-900">Dr. Rustam Saidov</h3>
+                    <p class="text-sm text-primary-600 font-medium" data-lang-key="embryologist">Embryologist, Highest Category</p>
                 </div>
             </div>
         </div>
@@ -656,67 +992,76 @@
     <section id="equipment" class="py-24 bg-slate-50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <span class="text-primary-600 font-bold uppercase tracking-widest text-sm">Our Technology</span>
-                <h2 class="text-4xl font-extrabold text-slate-900 mt-3">Modern Equipment</h2>
-                <p class="text-slate-600 mt-4 max-w-2xl mx-auto">We utilize state-of-the-art technology for precise results and optimal patient care</p>
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 text-primary-700 text-sm font-bold mb-4">
+                    <i data-lucide="cpu" class="w-4 h-4"></i> <span data-lang-key="ourTechnology">Our Technology</span>
+                </div>
+                <h2 class="text-4xl font-extrabold text-slate-900 mb-4" data-lang-key="modernEquip">Modern Equipment</h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto" data-lang-key="equipDesc">We utilize state-of-the-art technology for precise results and optimal patient care</p>
             </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center card-hover">
-                    <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="monitor" class="w-8 h-8 text-primary-600"></i>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-lg border border-slate-100 hover:shadow-xl transition">
+                    <div class="bg-primary-50 w-12 h-12 rounded-lg flex items-center justify-center text-primary-600 mb-4">
+                        <i data-lucide="flask-conical" class="w-6 h-6"></i>
                     </div>
-                    <h4 class="font-bold text-slate-800">Mindray MR-96A</h4>
-                    <p class="text-sm text-slate-500 mt-2">Immunoenzyme Tests</p>
+                    <h4 class="font-bold text-slate-900">Mindray MR-96A</h4>
+                    <p class="text-sm text-slate-500" data-lang-key="immunoTests">Immunoenzyme Tests</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center card-hover">
-                    <div class="w-16 h-16 bg-cyan-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="radio" class="w-8 h-8 text-cyan-600"></i>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg border border-slate-100 hover:shadow-xl transition">
+                    <div class="bg-primary-50 w-12 h-12 rounded-lg flex items-center justify-center text-primary-600 mb-4">
+                        <i data-lucide="scan" class="w-6 h-6"></i>
                     </div>
-                    <h4 class="font-bold text-slate-800">SONOSCAPE SSI 6000</h4>
-                    <p class="text-sm text-slate-500 mt-2">Ultrasound Imaging</p>
+                    <h4 class="font-bold text-slate-900">SONOSCAPE SSI 6000</h4>
+                    <p class="text-sm text-slate-500" data-lang-key="ultrasoundImaging">Ultrasound Imaging</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center card-hover">
-                    <div class="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="zap" class="w-8 h-8 text-amber-600"></i>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg border border-slate-100 hover:shadow-xl transition">
+                    <div class="bg-primary-50 w-12 h-12 rounded-lg flex items-center justify-center text-primary-600 mb-4">
+                        <i data-lucide="zap" class="w-6 h-6"></i>
                     </div>
-                    <h4 class="font-bold text-slate-800">ERASER-CO2 Laser</h4>
-                    <p class="text-sm text-slate-500 mt-2">Surgical Procedures</p>
+                    <h4 class="font-bold text-slate-900">ERASER-CO2 Laser</h4>
+                    <p class="text-sm text-slate-500" data-lang-key="surgicalProc">Surgical Procedures</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center card-hover">
-                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="snowflake" class="w-8 h-8 text-blue-600"></i>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg border border-slate-100 hover:shadow-xl transition">
+                    <div class="bg-primary-50 w-12 h-12 rounded-lg flex items-center justify-center text-primary-600 mb-4">
+                        <i data-lucide="snowflake" class="w-6 h-6"></i>
                     </div>
-                    <h4 class="font-bold text-slate-800">Dewar Containers</h4>
-                    <p class="text-sm text-slate-500 mt-2">Cryopreservation</p>
+                    <h4 class="font-bold text-slate-900">Dewar Containers</h4>
+                    <p class="text-sm text-slate-500" data-lang-key="cryoStorage">Cryopreservation</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center card-hover">
-                    <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="microscope" class="w-8 h-8 text-purple-600"></i>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg border border-slate-100 hover:shadow-xl transition">
+                    <div class="bg-primary-50 w-12 h-12 rounded-lg flex items-center justify-center text-primary-600 mb-4">
+                        <i data-lucide="microscope" class="w-6 h-6"></i>
                     </div>
-                    <h4 class="font-bold text-slate-800">ICSI Microscope</h4>
-                    <p class="text-sm text-slate-500 mt-2">Microinjection System</p>
+                    <h4 class="font-bold text-slate-900">ICSI Microscope</h4>
+                    <p class="text-sm text-slate-500" data-lang-key="microinjection">Microinjection System</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center card-hover">
-                    <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="box" class="w-8 h-8 text-green-600"></i>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg border border-slate-100 hover:shadow-xl transition">
+                    <div class="bg-primary-50 w-12 h-12 rounded-lg flex items-center justify-center text-primary-600 mb-4">
+                        <i data-lucide="wind" class="w-6 h-6"></i>
                     </div>
-                    <h4 class="font-bold text-slate-800">Laminar Flow</h4>
-                    <p class="text-sm text-slate-500 mt-2">Sterile Environment</p>
+                    <h4 class="font-bold text-slate-900">Laminar Flow</h4>
+                    <p class="text-sm text-slate-500" data-lang-key="sterileEnv">Sterile Environment</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center card-hover">
-                    <div class="w-16 h-16 bg-rose-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="eye" class="w-8 h-8 text-rose-600"></i>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg border border-slate-100 hover:shadow-xl transition">
+                    <div class="bg-primary-50 w-12 h-12 rounded-lg flex items-center justify-center text-primary-600 mb-4">
+                        <i data-lucide="camera" class="w-6 h-6"></i>
                     </div>
-                    <h4 class="font-bold text-slate-800">SONY Colposcope</h4>
-                    <p class="text-sm text-slate-500 mt-2">Cervical Examination</p>
+                    <h4 class="font-bold text-slate-900">SONY Colposcope</h4>
+                    <p class="text-sm text-slate-500" data-lang-key="cervicalExam">Cervical Examination</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center card-hover">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="flask-conical" class="w-8 h-8 text-indigo-600"></i>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg border border-slate-100 hover:shadow-xl transition">
+                    <div class="bg-primary-50 w-12 h-12 rounded-lg flex items-center justify-center text-primary-600 mb-4">
+                        <i data-lucide="box" class="w-6 h-6"></i>
                     </div>
-                    <h4 class="font-bold text-slate-800">PCR Box</h4>
-                    <p class="text-sm text-slate-500 mt-2">Molecular Diagnostics</p>
+                    <h4 class="font-bold text-slate-900">PCR Box</h4>
+                    <p class="text-sm text-slate-500" data-lang-key="molecularDiag">Molecular Diagnostics</p>
                 </div>
             </div>
         </div>
@@ -725,185 +1070,173 @@
     <!-- Pricing Section -->
     <section id="pricing" class="py-24 bg-white">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
-                <div>
-                    <span class="text-primary-600 font-bold uppercase tracking-widest text-sm">Transparent Pricing</span>
-                    <h2 class="text-4xl font-extrabold text-slate-900 mt-3">Price List</h2>
-                    <p class="text-slate-600 mt-2">All prices in Tajik Somoni (TJS), including VAT</p>
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 text-primary-700 text-sm font-bold mb-4">
+                    <i data-lucide="receipt" class="w-4 h-4"></i> <span data-lang-key="transparentPricing">Transparent Pricing</span>
                 </div>
-                <span class="bg-green-100 text-green-700 px-6 py-2 rounded-full text-sm font-bold mt-4 md:mt-0">
-                    <i data-lucide="badge-check" class="w-4 h-4 inline mr-1"></i> Updated 2025
+                <h2 class="text-4xl font-extrabold text-slate-900 mb-4" data-lang-key="priceList">Price List</h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto" data-lang-key="priceDesc">All prices in Tajik Somoni (TJS), including VAT</p>
+                <span class="inline-block mt-2 px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">
+                    <i data-lucide="refresh-cw" class="w-3 h-3 inline"></i> <span data-lang-key="updated">Updated 2025</span>
                 </span>
             </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <!-- Consultations -->
-                <div class="bg-gradient-to-br from-primary-50 to-cyan-50 p-8 rounded-3xl border border-primary-100">
-                    <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                        <div class="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center">
-                            <i data-lucide="stethoscope" class="w-5 h-5 text-white"></i>
-                        </div>
-                        Consultations
+                <div class="bg-slate-50 rounded-2xl p-8">
+                    <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                        <i data-lucide="user" class="w-5 h-5 text-primary-600"></i> <span data-lang-key="consultationsTab">Consultations</span>
                     </h3>
-                    <ul class="space-y-4">
-                        <li class="flex justify-between items-center py-2 border-b border-primary-100">
-                            <span class="text-slate-700">Initial Reproductologist</span>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center py-3 border-b border-slate-200">
+                            <span class="text-slate-600" data-lang-key="initialRepro">Initial Reproductologist</span>
                             <span class="font-bold text-slate-900">42 TJS</span>
-                        </li>
-                        <li class="flex justify-between items-center py-2 border-b border-primary-100">
-                            <span class="text-slate-700">Professor Consultation</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-slate-200">
+                            <span class="text-slate-600" data-lang-key="professorConsult">Professor Consultation</span>
                             <span class="font-bold text-slate-900">142 TJS</span>
-                        </li>
-                        <li class="flex justify-between items-center py-2 border-b border-primary-100">
-                            <span class="text-slate-700">Foreign Specialist</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-slate-200">
+                            <span class="text-slate-600" data-lang-key="foreignSpecialist">Foreign Specialist</span>
                             <span class="font-bold text-slate-900">213 TJS</span>
-                        </li>
-                        <li class="flex justify-between items-center py-2">
-                            <span class="text-slate-700">Couple Consultation</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3">
+                            <span class="text-slate-600" data-lang-key="coupleConsult">Couple Consultation</span>
                             <span class="font-bold text-slate-900">88 TJS</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Diagnostics -->
-                <div class="bg-gradient-to-br from-teal-50 to-emerald-50 p-8 rounded-3xl border border-teal-100">
-                    <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                        <div class="w-10 h-10 bg-teal-600 rounded-xl flex items-center justify-center">
-                            <i data-lucide="scan" class="w-5 h-5 text-white"></i>
                         </div>
-                        Ultrasound
+                    </div>
+                </div>
+                
+                <!-- Ultrasound -->
+                <div class="bg-slate-50 rounded-2xl p-8">
+                    <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                        <i data-lucide="scan" class="w-5 h-5 text-primary-600"></i> <span data-lang-key="ultrasoundTab">Ultrasound</span>
                     </h3>
-                    <ul class="space-y-4">
-                        <li class="flex justify-between items-center py-2 border-b border-teal-100">
-                            <span class="text-slate-700">Liver & Gallbladder</span>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center py-3 border-b border-slate-200">
+                            <span class="text-slate-600" data-lang-key="liverGallbladder">Liver & Gallbladder</span>
                             <span class="font-bold text-slate-900">52 TJS</span>
-                        </li>
-                        <li class="flex justify-between items-center py-2 border-b border-teal-100">
-                            <span class="text-slate-700">Uterus Ultrasound</span>
-                            <span class="font-bold text-slate-900">55 TJS</span>
-                        </li>
-                        <li class="flex justify-between items-center py-2 border-b border-teal-100">
-                            <span class="text-slate-700">Pregnancy Screening</span>
-                            <span class="font-bold text-slate-900">60 TJS</span>
-                        </li>
-                        <li class="flex justify-between items-center py-2">
-                            <span class="text-slate-700">Folliculometry</span>
-                            <span class="font-bold text-slate-900">35 TJS</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Lab Tests -->
-                <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-3xl border border-purple-100">
-                    <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                        <div class="w-10 h-10 bg-purple-600 rounded-xl flex items-center justify-center">
-                            <i data-lucide="test-tube-2" class="w-5 h-5 text-white"></i>
                         </div>
-                        Laboratory
+                        <div class="flex justify-between items-center py-3 border-b border-slate-200">
+                            <span class="text-slate-600" data-lang-key="uterusUltrasound">Uterus Ultrasound</span>
+                            <span class="font-bold text-slate-900">55 TJS</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-slate-200">
+                            <span class="text-slate-600" data-lang-key="pregnancyScreen">Pregnancy Screening</span>
+                            <span class="font-bold text-slate-900">60 TJS</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3">
+                            <span class="text-slate-600" data-lang-key="folliculometry">Folliculometry</span>
+                            <span class="font-bold text-slate-900">35 TJS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Laboratory -->
+                <div class="bg-slate-50 rounded-2xl p-8">
+                    <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                        <i data-lucide="test-tubes" class="w-5 h-5 text-primary-600"></i> <span data-lang-key="laboratory">Laboratory</span>
                     </h3>
-                    <ul class="space-y-4">
-                        <li class="flex justify-between items-center py-2 border-b border-purple-100">
-                            <span class="text-slate-700">Complete Blood Count</span>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center py-3 border-b border-slate-200">
+                            <span class="text-slate-600" data-lang-key="completeBlood">Complete Blood Count</span>
                             <span class="font-bold text-slate-900">32 TJS</span>
-                        </li>
-                        <li class="flex justify-between items-center py-2 border-b border-purple-100">
-                            <span class="text-slate-700">Hormone Panel (LH)</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-slate-200">
+                            <span class="text-slate-600" data-lang-key="hormonePanel">Hormone Panel (LH)</span>
                             <span class="font-bold text-slate-900">73 TJS</span>
-                        </li>
-                        <li class="flex justify-between items-center py-2 border-b border-purple-100">
-                            <span class="text-slate-700">Spermogram Analysis</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-slate-200">
+                            <span class="text-slate-600" data-lang-key="spermogram">Spermogram Analysis</span>
                             <span class="font-bold text-slate-900">100 TJS</span>
-                        </li>
-                        <li class="flex justify-between items-center py-2">
-                            <span class="text-slate-700">Genetic Parentage Test</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3">
+                            <span class="text-slate-600" data-lang-key="geneticParentage">Genetic Parentage Test</span>
                             <span class="font-bold text-slate-900">7400 TJS</span>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-
+            
             <div class="text-center mt-12">
-                <a href="#contact" class="inline-flex items-center gap-2 bg-gradient-to-r from-primary-600 to-cyan-500 text-white px-8 py-4 rounded-full font-bold hover:shadow-xl hover:shadow-primary-600/30 transition-all duration-300 hover:scale-105">
-                    <i data-lucide="file-text" class="w-5 h-5"></i> Download Full Price List
+                <a href="#" class="inline-flex items-center gap-2 bg-primary-600 text-white px-8 py-4 rounded-full font-bold hover:bg-primary-700 transition">
+                    <i data-lucide="download" class="w-5 h-5"></i> <span data-lang-key="downloadPrice">Download Full Price List</span>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-slate-900 text-white relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-0 left-0 w-96 h-96 bg-primary-500 rounded-full filter blur-3xl"></div>
-            <div class="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500 rounded-full filter blur-3xl"></div>
-        </div>
-        
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-16">
-                <div>
-                    <span class="text-primary-400 font-bold uppercase tracking-widest text-sm">Get In Touch</span>
-                    <h2 class="text-4xl font-extrabold mt-3 mb-6">Contact Us</h2>
-                    <p class="text-slate-300 text-lg mb-8">
-                        Ready to start your journey? Contact us today to schedule a consultation with our expert team.
-                    </p>
+    <section id="contact" class="py-24 bg-slate-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-primary-300 text-sm font-bold mb-4">
+                    <i data-lucide="mail" class="w-4 h-4"></i> <span data-lang-key="getInTouch">Get In Touch</span>
+                </div>
+                <h2 class="text-4xl font-extrabold mb-4" data-lang-key="contactUs">Contact Us</h2>
+                <p class="text-lg text-slate-300 max-w-2xl mx-auto" data-lang-key="contactDesc">Ready to start your journey? Contact us today to schedule a consultation with our expert team.</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
+                <div class="space-y-8">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-primary-600 p-4 rounded-xl">
+                            <i data-lucide="map-pin" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg" data-lang-key="addressLabel">Address</h4>
+                            <p class="text-slate-300" data-lang-key="addressFull">N. Mahsum Street 95/4, Dushanbe
+Republic of Tajikistan (District 102)</p>
+                        </div>
+                    </div>
                     
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <div class="w-14 h-14 bg-primary-600/20 rounded-2xl flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="map-pin" class="w-6 h-6 text-primary-400"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg">Address</h4>
-                                <p class="text-slate-400">N. Mahsum Street 95/4, Dushanbe<br>Republic of Tajikistan (District 102)</p>
-                            </div>
+                    <div class="flex items-start gap-4">
+                        <div class="bg-primary-600 p-4 rounded-xl">
+                            <i data-lucide="phone" class="w-6 h-6"></i>
                         </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-14 h-14 bg-primary-600/20 rounded-2xl flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="phone" class="w-6 h-6 text-primary-400"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg">Phone</h4>
-                                <p class="text-slate-400">(+992) 93 500 65 71<br>(+992) 93 852 59 00<br>(+992) 903 06 75 75</p>
-                            </div>
+                        <div>
+                            <h4 class="font-bold text-lg" data-lang-key="phoneLabel">Phone</h4>
+                            <p class="text-slate-300">(+992) 93 500 65 71<br>(+992) 93 852 59 00<br>(+992) 903 06 75 75</p>
                         </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-14 h-14 bg-primary-600/20 rounded-2xl flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="clock" class="w-6 h-6 text-primary-400"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg">Working Hours</h4>
-                                <p class="text-slate-400">Monday - Friday: 08:00 - 17:00<br>Saturday: 08:00 - 14:00</p>
-                            </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="bg-primary-600 p-4 rounded-xl">
+                            <i data-lucide="clock" class="w-6 h-6"></i>
                         </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-14 h-14 bg-primary-600/20 rounded-2xl flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="mail" class="w-6 h-6 text-primary-400"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg">Email</h4>
-                                <p class="text-slate-400">info@nasl.tj<br>MCNASLShams@mail.ru</p>
-                            </div>
+                        <div>
+                            <h4 class="font-bold text-lg" data-lang-key="workingHours">Working Hours</h4>
+                            <p class="text-slate-300"><span data-lang-key="weekdays">Monday - Friday: 08:00 - 17:00</span><br><span data-lang-key="saturday">Saturday: 08:00 - 14:00</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="bg-primary-600 p-4 rounded-xl">
+                            <i data-lucide="mail" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg" data-lang-key="emailLabel">Email</h4>
+                            <p class="text-slate-300">info@nasl.tj<br>MCNASLShams@mail.ru</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/10">
-                    <h3 class="text-2xl font-bold mb-6">Book an Appointment</h3>
-                    <form class="space-y-5">
-                        <div class="grid md:grid-cols-2 gap-5">
-                            <input type="text" placeholder="Your Name" class="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-primary-400 transition">
-                            <input type="tel" placeholder="Phone Number" class="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-primary-400 transition">
-                        </div>
-                        <input type="email" placeholder="Email Address" class="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-primary-400 transition">
-                        <select class="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/20 text-slate-400 focus:outline-none focus:border-primary-400 transition">
-                            <option value="">Select Service</option>
-                            <option value="consultation">Consultation</option>
-                            <option value="ivf">IVF Treatment</option>
-                            <option value="diagnostics">Diagnostics</option>
-                            <option value="surgery">Surgery</option>
+                
+                <div class="bg-white/5 backdrop-blur rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold mb-6" data-lang-key="bookAppointment">Book an Appointment</h3>
+                    <form class="space-y-4">
+                        <input type="text" placeholder="Your Name" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:border-primary-400">
+                        <input type="email" placeholder="Email Address" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:border-primary-400">
+                        <input type="tel" placeholder="Phone Number" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:border-primary-400">
+                        <select class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-400">
+                            <option value="" class="text-slate-900" data-lang-key="selectService">Select Service</option>
+                            <option value="consultation" class="text-slate-900" data-lang-key="consultation">Consultation</option>
+                            <option value="ivf" class="text-slate-900" data-lang-key="ivfTreatment">IVF Treatment</option>
+                            <option value="diagnostics" class="text-slate-900" data-lang-key="diagnosticsOpt">Diagnostics</option>
+                            <option value="surgery" class="text-slate-900" data-lang-key="surgeryOpt">Surgery</option>
                         </select>
-                        <textarea placeholder="Your Message" rows="4" class="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-primary-400 transition resize-none"></textarea>
-                        <button type="submit" class="w-full bg-gradient-to-r from-primary-600 to-cyan-500 text-white px-8 py-4 rounded-xl font-bold hover:shadow-xl hover:shadow-primary-600/30 transition-all duration-300 flex items-center justify-center gap-2">
-                            <i data-lucide="send" class="w-5 h-5"></i> Send Message
+                        <textarea placeholder="Your Message" rows="4" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:border-primary-400"></textarea>
+                        <button type="submit" class="w-full bg-gradient-to-r from-primary-600 to-cyan-500 text-white py-4 rounded-xl font-bold hover:shadow-lg hover:shadow-primary-600/30 transition flex items-center justify-center gap-2">
+                            <i data-lucide="send" class="w-5 h-5"></i> <span data-lang-key="sendMessage">Send Message</span>
                         </button>
                     </form>
                 </div>
@@ -912,70 +1245,18 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 text-slate-400 py-12">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-gradient-to-br from-primary-600 to-cyan-500 rounded-xl flex items-center justify-center text-white font-bold text-xl">N</div>
-                    <div>
-                        <h4 class="text-white font-bold">NASL Medical Center</h4>
-                        <p class="text-xs">© 2010-2025 All Rights Reserved</p>
-                    </div>
-                </div>
-                <div class="flex gap-4">
-                    <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition">
-                        <i data-lucide="facebook" class="w-5 h-5"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition">
-                        <i data-lucide="instagram" class="w-5 h-5"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition">
-                        <i data-lucide="youtube" class="w-5 h-5"></i>
-                    </a>
-                </div>
+    <footer class="bg-slate-950 text-slate-400 py-8">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center gap-3 mb-4 md:mb-0">
+                <img src="images/nasl-logo.png" alt="NASL" class="w-10 h-10 object-contain logo-white">
+                <span class="font-bold text-white">NASL Medical Center</span>
             </div>
+            <p class="text-sm">© 2010-2025 <span data-lang-key="allRights">All Rights Reserved</span></p>
         </div>
     </footer>
 
     <script>
-        // Initialize Lucide icons
         lucide.createIcons();
-        
-        // Mobile menu toggle
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-        
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-        
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in-up');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-        
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
     </script>
 </body>
 </html>
